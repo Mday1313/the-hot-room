@@ -1,0 +1,26 @@
+{
+  "name": "the-hot-room",
+  "version": "1.0.0",
+  "description": "Website for The Hot Room Yoga Studio.  This project is built with React js, Next js, Auth0, and MongoDB.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mday1313/the-hot-room.git"
+  },
+  "author": "Melissa Day",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mday1313/the-hot-room/issues"
+  },
+  "homepage": "https://github.com/Mday1313/the-hot-room#readme",
+  "dependencies": {
+    "next": "^9.5.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
