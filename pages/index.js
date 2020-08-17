@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
 
-class Home extends Component {
-    render(){
-        return(
-            <>
-                <h1>Hello, hi</h1>
-            </>
-        )
-    }
-}
+import Layout from '../components/Layout';
 
-export default Home;
+const Index = () => (
+    <Layout>
+        <div>
+            <h1>Hello</h1>
+        </div>
+    </Layout>
+)
+
+export default Index;
