@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
+import Layout from '../../components/Layout'
+import Profile from './profile';
 
 class Users extends Component {
     render(){
         return(
             <>
-                <h1>User Dash</h1>
+                <Layout>
+                    <Profile/>
+                </Layout>
             </>
         )
     }

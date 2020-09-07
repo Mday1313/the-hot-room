@@ -1,12 +1,39 @@
-
+import React from 'react';
+import axios from 'axios';
 import Layout from '../components/Layout';
 
-const Index = () => (
-    <Layout>
-        <div>
-            <h1>Hello</h1>
-        </div>
-    </Layout>
-)
+class Home extends React.Component {
+    // 
+    static async getInitialProps() {
+        let userData;
+        try {
+            const response = await axios.get('https://jsonplaceholder.typicode.com/users/1')
+            userData = response.data;
+            console.log(userData)
+        } catch {
+            console.log('error')
+        }
 
-export default Index;
+
+        return {
+            user: {
+                name: 'Mel',
+                lastname: 'Day'
+            }
+           
+        }
+    }
+    
+
+
+    render(){
+      
+        return(
+            <Layout>
+               
+            </Layout>
+        )
+    }
+}    
+
+export default Home;
