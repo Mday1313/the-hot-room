@@ -9,11 +9,10 @@ const passport = require("passport");
 const helmet = require("helmet");
 const compression = require("compression");
 
-/* Loads all variables from .env file to "process.env" */
 require("dotenv").config();
-/* Require our models here so we can use the mongoose.model() singleton to reference our models across our app */
-require("./models/Post");
 
+require("./models/Post");
+//require("./models/Event");
 require("./models/User");
 const routes = require("./routes");
 require("./passport");
@@ -45,15 +44,11 @@ app.prepare().then(() => {
   const server = express();
 
   if (!dev) {
-    /* Helmet helps secure our app by setting various HTTP headers */
     server.use(helmet());
-    /* Compression gives us gzip compression */
     server.use(compression());
   }
 
-  /* Body Parser built-in to Express as of version 4.16 */
   server.use(express.json());
-  /* Express Validator will validate form data sent to the backend */
   server.use(expressValidator());
 
   /* give all Next.js's requests to Next.js server */
@@ -97,29 +92,25 @@ app.prepare().then(() => {
   server.use(passport.session());
 
   server.use((req, res, next) => {
-    /* custom middleware to put our user data (from passport) on the req.user so we can access it as such anywhere in our app */
     res.locals.user = req.user || null;
     next();
   });
 
-  /* morgan for request logging from client
-  - we use skip to ignore static files from _next folder */
+
   server.use(
     logger("dev", {
       skip: req => req.url.includes("_next")
     })
   );
 
-  /* apply routes from the "routes" folder */
+
   server.use("/", routes);
 
-  /* Error handling from async / await functions */
   server.use((err, req, res, next) => {
     const { status = 500, message } = err;
     res.status(status).json(message);
   });
 
-  /* create custom routes with route params */
   server.get("/profile/:userId", (req, res) => {
     const routeParams = Object.assign({}, req.params, req.query);
     return app.render(req, res, "/profile", routeParams);
