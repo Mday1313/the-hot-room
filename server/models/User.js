@@ -9,13 +9,11 @@ const userSchema = new mongoose.Schema(
       type: String,
       trim: true,
       lowercase: true,
-      unique: true,
       required: "Email is required"
     },
     name: {
       type: String,
       trim: true,
-      unique: true,
       minlength: 4,
       maxlength: 10,
       required: "Name is required"
@@ -52,3 +50,4 @@ userSchema.plugin(passportLocalMongoose, { usernameField: "email" });
 userSchema.plugin(mongodbErrorHandler);
 
 module.exports = mongoose.model("User", userSchema);
+
