@@ -1,40 +1,49 @@
-import React from 'react';
-import axios from 'axios';
-import Layout from '../components/Layout';
+import withStyles from "@material-ui/core/styles/withStyles";
 
-class Home extends React.Component {
-    // 
-    static async getInitialProps() {
-        let userData;
-        try {
-            const response = await axios.get('https://jsonplaceholder.typicode.com/users/1')
-            userData = response.data;
-            console.log(userData)
-        } catch {
-            console.log('error')
-        }
+class Index extends React.Component {
+  state = {};
 
+  render() {
+    return <div>Index</div>;
+  }
+}
 
-        return {
-            user: {
-                name: 'Mel',
-                lastname: 'Day'
-            }
-           
-        }
-        console.log('hello')
+const styles = theme => ({
+  root: {
+    paddingTop: theme.spacing.unit * 10,
+    paddingLeft: theme.spacing.unit * 5,
+    [theme.breakpoints.down("sm")]: {
+      paddingRight: theme.spacing.unit * 5
     }
-    
-
-
-    render(){
-      
-        return(
-            <Layout>
-               
-            </Layout>
-        )
+  },
+  progressContainer: {
+    height: "80vh"
+  },
+  progress: {
+    margin: theme.spacing.unit * 2,
+    color: theme.palette.secondary.light
+  },
+  drawerContainer: {
+    [theme.breakpoints.down("sm")]: {
+      display: "none"
     }
-}    
+  },
+  drawer: {
+    width: 350
+  },
+  drawerPaper: {
+    marginTop: 70,
+    width: 350
+  },
+  fabButton: {
+    margin: theme.spacing.unit * 3
+  },
+  heroContent: {
+    maxWidth: 600,
+    paddingTop: theme.spacing.unit * 8,
+    paddingBottom: theme.spacing.unit * 6,
+    margin: "0 auto"
+  }
+});
 
-export default Home;
+export default withStyles(styles)(Index);
