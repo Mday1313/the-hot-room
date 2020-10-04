@@ -3,7 +3,7 @@ import Head from "next/head";
 import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import JssProvider from "react-jss/lib/JssProvider";
-
+import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import getPageContext from "../lib/getPageContext";
 
@@ -46,6 +46,7 @@ class MyApp extends App {
             {/* Pass pageContext to the _document though the renderPage enhancer
                 to render collected styles on server side. */}
             <Component pageContext={this.pageContext} {...pageProps} />
+            <Footer {...this.props} />
           </MuiThemeProvider>
         </JssProvider>
       </Container>

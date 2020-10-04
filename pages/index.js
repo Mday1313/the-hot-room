@@ -1,10 +1,16 @@
 import withStyles from "@material-ui/core/styles/withStyles";
+import Home from "../components/main";
 
 class Index extends React.Component {
   state = {};
 
   render() {
-    return <div>Index</div>;
+    return (
+    <div>
+      <Home />
+
+    </div>
+    );
   }
 }
 

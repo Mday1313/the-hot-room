@@ -48,37 +48,37 @@ class MyDocument extends Document {
       <html lang="en" dir="ltr">
         <Head>
         <link 
-                        rel="shortcut icon"
-                        href="/static/favicon.ico"
-                        type="image.x-icon"
-                    />
-                    
-                    <link rel="icon" href="/static/favicon.ico" />
-                    <link 
-                        rel="icon" 
-                        type="image/png"
-                        sizes="32x32"
-                        href="/static/favicon-32x32.png"
-                    />
-                    <link 
-                        rel="icon" 
-                        type="image/png"
-                        sizes="16x16"
-                        href="/static/favicon-16x16.png"
-                    />
-                    <meta charSet="utf-8" />
-                    <meta 
-                        name="viewport"
-                        content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
-                    />
-                    <meta 
-                        name="theme-color"
-                        content={pageContext.theme.palette.primary.main}
-                    />
-                    <meta
-                        name="description"
-                        content="The Hot Room Yoga and Wellness Studio TN"
-                    />
+            rel="shortcut icon"
+            href="/static/favicon.ico"
+            type="image.x-icon"
+        />
+        
+        <link rel="icon" href="/static/favicon.ico" />
+        <link 
+            rel="icon" 
+            type="image/png"
+            sizes="32x32"
+            href="/static/favicon-32x32.png"
+        />
+        <link 
+            rel="icon" 
+            type="image/png"
+            sizes="16x16"
+            href="/static/favicon-16x16.png"
+        />
+        <meta charSet="utf-8" />
+        <meta 
+            name="viewport"
+            content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
+        />
+        <meta 
+            name="theme-color"
+            content={pageContext.theme.palette.primary.main}
+        />
+        <meta
+            name="description"
+            content="The Hot Room Yoga and Wellness Studio TN"
+        />
         </Head>
         <body>
           <Main />

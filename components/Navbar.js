@@ -7,8 +7,11 @@ import { IconButton } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
+import ActiveLink from "./ActiveLink";
 
-const Navbar = ({ classes, router }) => {
+const Navbar = ({ classes, router, pageProps: { auth } }) => {
+    const { user = { } } = auth || {};
+
     // const [auth, setAuth] = React.useState(true);
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
@@ -28,15 +31,20 @@ const Navbar = ({ classes, router }) => {
     return (
         <AppBar className={classes.appBar} color="default" position={router.pathname === "/" ? "fixed" : "static"}>
             <Toolbar>
-                {/* Main Logo / Home Button */}
+                {/* TODO: Main Logo / Home Button */}
+               
                 <Typography variant="h5" component="h1" color="primary" className={classes.toolbarTitle}>
-                    The Hot Room
+                    <ActiveLink href="/">
+                        The Hot Room
+                    </ActiveLink>
                 </Typography>
+               
                 <IconButton edge="start" className={classes.icon} color="primary" aria-controls="menu"
                 aria-haspopup="true"
                 onClick={handleMenu}>
                     <MenuIcon />
                 </IconButton>
+           
 
                 <div>
                     <Menu
@@ -54,12 +62,37 @@ const Navbar = ({ classes, router }) => {
                         open={open}
                         onClose={handleClose}
                     >
-                        <MenuItem onClick={handleClose}>About Us</MenuItem>
+                        {/* TODO: add links */}
+                        <MenuItem onClick={handleClose}>
+                            <ActiveLink href="/about">
+                                About Us
+                            </ActiveLink>
+                        </MenuItem>
+                        {/* TODO: links that bring you down the page */}
                         <MenuItem onClick={handleClose}>Events</MenuItem>
                         <MenuItem onClick={handleClose}>Classes Descriptions & Schedule</MenuItem>
                         <MenuItem onClick={handleClose}>Pricing</MenuItem>
                         <MenuItem onClick={handleClose}>Contact Us</MenuItem>
-                        <MenuItem onClick={handleClose}>Member Sign In</MenuItem>
+                     
+                         {/* If logged in give addition menu options, and replace Member Sign in with Sign Out */}
+                        {user.id ? (
+                            // Auth
+                            <div>
+
+                                <MenuItem onClick={handleClose}>Member Profile</MenuItem>
+                                <MenuItem onClick={handleClose}>Sign Out</MenuItem>
+                            </div>
+                            
+                        ) : ( 
+                            // UnAuth
+                            
+                            <MenuItem onClick={handleClose}>
+                                <ActiveLink href="/signin">
+                                    Member Sign In
+                                </ActiveLink>
+                            </MenuItem>
+                          
+                        )}
                     </Menu>
                 </div>
             </Toolbar>
