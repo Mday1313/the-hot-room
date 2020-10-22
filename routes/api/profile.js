@@ -11,7 +11,7 @@ const Profile = require('../../models/Profile');
 //  @acces Private
 router.get('/me', auth, async (req, res) => {
     try {
-        const profile = await Profile.findOne({ user: req.user.id }).populate('user', ['name', 'avatar']);
+        const profile = await Profile.findOne({ user: req.user.id }).populate('user', ['name', 'avatar', 'isAdmin']);
 
         if(!profile) {
             return res.status(400).json({ msg: 'There is no profile for this user' });
@@ -92,7 +92,7 @@ async (req, res) => {
 
 router.get('/', async (req, res) => {
     try {
-        const profiles = await Profile.find().populate('user', ['name', 'avatar']);
+        const profiles = await Profile.find().populate('user', ['name', 'avatar', 'isAdmin']);
         res.json(profiles);
     } catch(err) {
         console.error(error.message);
@@ -106,7 +106,7 @@ router.get('/', async (req, res) => {
 
 router.get('/user/:user_id', async (req, res) => {
     try {
-        const profile = await Profile.findOne({ user: req.params.user_id }).populate('user', ['name', 'avatar']);
+        const profile = await Profile.findOne({ user: req.params.user_id }).populate('user', ['name', 'avatar', 'isAdmin']);
 
         if(!profile) {
             return res.status(400).json({ msg: 'Profile not found'})
@@ -199,5 +199,9 @@ router.delete('/experience/:exp_id', auth, async (req,res) => {
         res.status(500).send('Server Error');
     }
 })
+
+//  @route Delete api/profile/mindbody
+//  @desc  bring in mindbody
+//  @acces Private
 
 module.exports = router;
