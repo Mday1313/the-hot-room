@@ -33,6 +33,7 @@ const EventSchema = new mongoose.Schema({
     },
     status: {
         type: String,
+        default: 'Active'
     }
 
 });

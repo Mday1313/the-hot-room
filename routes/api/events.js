@@ -29,16 +29,6 @@ async (req, res) => {
             if(!user.isAdmin) {
                 return res.status(401).status({ msg: 'User not authorized' });
             }
-            // let event = await Event.findById(req.event.id);
-            // // Update
-            //         if(event) {
-            //             event = await Event.findOneAndUpdate(
-            //                 { $set: eventFields },
-            //                 { new: true }
-            //             );
-            
-            //             return res.json(profile);
-            //         }
         
             event = new Event({
                 name, 
@@ -127,5 +117,64 @@ router.delete('/:id', auth, async (req,res) => {
         res.status(500).send('Server Error');
     }
 });
+
+//  @route POST api/events/:id
+//  @desc Edit an event
+//  @acces Private
+router.post('/:id', [ auth, [
+    check('name', 'Name is required').not().isEmpty(),
+    check('date', 'Date is required').not().isEmpty(),
+    check('time', 'Time is required').not().isEmpty()
+]], 
+async (req, res) => {
+        const errors = validationResult(req);
+        if(!errors.isEmpty()) {
+            return res.status(400).json({ errors: errors.array() });
+        }
+
+        const { name, description, image, date, time, instructor, location, price, status } = req.body;
+
+           // Build event object
+        const eventFields = {};
+
+        if(name) eventFields.name = name;
+        if(description) eventFields.description = description;
+        if(image) eventFields.image = image;
+        if(date) eventFields.date = date;
+        if(time) eventFields.time = time;
+        if(instructor) eventFields.instructor = instructor;
+        if(location) eventFields.location = location;
+        if(status) eventFields.status = status;
+        if(price) eventFields.price = price;
+
+        try {
+
+            const user = await User.findById(req.user.id).select('-password');
+            let event = await Event.findOne({ _id: req.params.id});
+            
+            if(!user.isAdmin) {
+                return res.status(401).status({ msg: 'User not authorized' });
+            }
+
+            if(event) {
+                
+                event = await Event.findOneAndUpdate(
+                    { _id: req.params.id },
+                    { $set: eventFields },
+                    { new: true }
+                );
+
+                return  res.json(event);
+            }
+
+        } catch (err) {
+            console.error(err.message);
+            res.status(500).send('Server Error');
+        }
+        
+    }
+);
+
+
 
 module.exports = router;
