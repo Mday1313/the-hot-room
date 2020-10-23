@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const EventsSchema = new mongoose.Schema({
+const EventSchema = new mongoose.Schema({
     
     name: {
         type: String,
@@ -8,23 +8,31 @@ const EventsSchema = new mongoose.Schema({
     },
     description: {
         type: String,
-        required: true,
     },
     image: {
         type: String
     },
     date: {
-        type: Date
+        type: Date,
+        required: true
     },
     time: {
-
+        type: String,
+        required: true
     },
     instructor: {
-
+        type: String,
+        default: 'TBD'
     },
     location: {
         type: String,
-        // make default the studio
+        default: 'The Hot Room Yoga & Wellness'
+    },
+    price: {
+        type: String
+    },
+    status: {
+        type: String,
     }
 
 });

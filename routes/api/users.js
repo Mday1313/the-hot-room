@@ -26,7 +26,7 @@ async (req, res) => {
     }
 
     // check if user exists
-    const { name, email, password } = req.body;
+    const { name, email, password, isAdmin } = req.body;
 
     try {
         let user = await User.findOne({ email });
@@ -45,7 +45,8 @@ async (req, res) => {
             name,
             email,
             avatar,
-            password
+            password, 
+            isAdmin
         })
 
         const salt = await bcrypt.genSalt(10);
