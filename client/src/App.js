@@ -6,13 +6,21 @@ import Navbar from './components/layout/Navbar';
 import Home from './pages/landing/Home';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
+import Alert from './components/layout/Alert';
+// REDUX
+import { Provider } from 'react-redux';
+import store from './store';
+
+import './App.css';
 
 const App = () => 
+  <Provider store={store}>
     <Router>
       <Fragment>
         <Navbar />
         <Route exact path="/" component={ Home } />
         <section className="container">
+          <Alert />
           <Switch>
             <Route exact path="/register" component={ Register } />
             <Route exact path="/login" component={ Login } />
@@ -21,6 +29,6 @@ const App = () =>
         
       </Fragment>
     </Router>
-
+  </Provider>
 
 export default App;

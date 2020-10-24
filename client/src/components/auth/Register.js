@@ -1,4 +1,7 @@
-import React, {useState } from 'react';
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { setAlert } from '../../actions/alert';
+import PropTypes from 'prop-types';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -12,7 +15,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import axios from 'axios';
+
 
 function Copyright() {
   return (
@@ -47,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Register() {
+const Register = ({ setAlert }) => {
   const classes = useStyles();
 
   const [formData, setFormData] = useState({
@@ -64,29 +67,10 @@ export default function Register() {
   const onSubmit = async e => {
       e.preventDefault();
       if(password !== password2) {
-        console.log('Passwords do not match');
+        setAlert('Passwords do not match', 'danger');
             
       } else {
-        const newUser = {
-            name,
-            email,
-            password
-        }
-
-        try {
-            const config = {
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            }
-
-            const body = JSON.stringify(newUser);
-
-            const res = await axios.post('/api/users', body, config);
-            console.log(res.data);
-        } catch (err) {
-            console.error(err.response.data);
-        }
+        console.log('Success')
       }
   }
 
@@ -102,18 +86,6 @@ export default function Register() {
         </Typography>
         <form className={classes.form} noValidate onSubmit={e => onSubmit(e)}>
           <Grid container spacing={2}>
-            {/* <Grid item xs={12} sm={6}>
-              <TextField
-                autoComplete="fname"
-                name="firstName"
-                variant="outlined"
-                required
-                fullWidth
-                id="firstName"
-                label="First Name"
-                autoFocus
-              />
-            </Grid> */}
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
@@ -202,3 +174,9 @@ export default function Register() {
     </Container>
   );
 }
+
+Register.propTypes = {
+    setAlert: PropTypes.func.isRequired,
+}
+
+export default connect(null, {setAlert})(Register);
