@@ -5,6 +5,9 @@ import MobileStepper from '@material-ui/core/MobileStepper';
 // import Button from '@material-ui/core/Button';
 // import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 // import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
+import image1 from '../../resources/images/header1.jpg';
+import image2 from '../../resources/images/header2.jpg';
+import image3 from '../../resources/images/header3.jpg';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 
@@ -13,20 +16,19 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 const tutorialSteps = [
   {
     label: '',
-    imgPath:
-      'https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60',
+    imgPath: image1,
   },
 
   {
     label: '',
     imgPath:
-      'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250&q=80',
+      image2,
   },
  
   {
     label: '',
     imgPath:
-      'https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60',
+      image3,
   },
 ];
 
@@ -83,6 +85,7 @@ function SwipeableTextMobileStepper() {
         {tutorialSteps.map((step, index) => (
           <div key={step.label}>
             {Math.abs(activeStep - index) <= 2 ? (
+               
               <img className={classes.img} src={step.imgPath} alt={step.label} />
             ) : null}
           </div>

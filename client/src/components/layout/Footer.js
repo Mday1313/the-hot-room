@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
         marginTop: 'auto',
         backgroundColor: theme.palette.primary.main,
         color: theme.palette.common.white,
-        height: '100px'
+        minHeight: '100px'
       }, 
       copyright: {
         backgroundColor: '#424242',
@@ -53,13 +53,13 @@ const Footer = ({  }) => {
         <footer align="bottom" position="fixed" className={classes.root}>
             <Grid container >
                 <Grid xs={12} container item className={classes.container} align="center">
-                    <Grid xs={12} lg={4} item>
+                    <Grid xs={12} md={4} item>
                         location
                     </Grid>
-                    <Grid xs={12} lg={4} item>
+                    <Grid xs={12} md={4} item>
                         logo
                     </Grid>
-                    <Grid xs={12} lg={4} item>
+                    <Grid xs={12} md={4} item>
                         contact us
                     </Grid>
                 </Grid>

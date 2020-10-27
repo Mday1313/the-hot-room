@@ -2,12 +2,13 @@ import React from 'react'
 import Typography from '@material-ui/core/Typography';
 
 import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
 
 
 const useStyles = makeStyles((theme) => ({
     container: {
         backgroundColor: theme.palette.secondary.light,
-        height: '100px',
+        minHeight: '100px',
         display: 'flex',
         alignItems: 'center',
         
@@ -17,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
         margin: 'auto',
         display: 'flex',
         justifyContent: 'space-around',
-       
+       flexWrap: 'wrap'
     },
     text: {
         color: theme.palette.secondary.main
@@ -31,17 +32,25 @@ const CallToAction = () => {
 
     return (
         <div className={classes.container}>
-            <div className={classes.textContainer}>
-                <Typography variant="h5" component="h1"  className={classes.text}>
-                    feel better than ever
-                </Typography>
-                <Typography variant="h5" component="h1"  className={classes.text}>
-                    increase flexibility
-                </Typography>
-                <Typography variant="h5" component="h1"  className={classes.text}>
-                    relieve pain
-                </Typography>
-            </div>
+            <Grid container className={classes.textContainer}>
+                <Grid container item xs={12}>
+                    <Grid item xs={12} md={4}>
+                        <Typography variant="h5" align="center" className={classes.text}>
+                            feel better than ever
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={12} md={4}>
+                        <Typography variant="h5" align="center" className={classes.text}>
+                            increase flexibility
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={12} md={4}>
+                        <Typography variant="h5" align="center"  className={classes.text}>
+                            relieve pain
+                        </Typography>
+                    </Grid>
+                </Grid>
+            </Grid>
         </div>
      
       );
