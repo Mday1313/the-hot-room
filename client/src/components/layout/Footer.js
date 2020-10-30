@@ -19,6 +19,14 @@ const useStyles = makeStyles((theme) => ({
         color: theme.palette.common.white,
         minHeight: '100px'
       }, 
+      contactBox: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignContent: 'center',
+        flexDirection: 'column',
+        width: '80',
+        margin: 'auto'
+      },
       copyright: {
         backgroundColor: '#424242',
         color: theme.palette.primary.contrastText,
@@ -33,28 +41,24 @@ const Footer = ({  }) => {
     const classes = useStyles();
  
 
-    // const [auth, setAuth] = React.useState(true);
-    // const [anchorEl, setAnchorEl] = React.useState(null);
-    // const open = Boolean(anchorEl);
-
-    // const handleChange = (event) => {
-    //     setAuth(event.target.checked);
-    // };
-
-    // const handleMenu = (event) => {
-    //     setAnchorEl(event.currentTarget);
-    // };
-
-    // const handleClose = () => {
-    //     setAnchorEl(null);
-    // };
 
     return (
         <footer align="bottom" position="fixed" className={classes.root}>
             <Grid container >
                 <Grid xs={12} container item className={classes.container} align="center">
-                    <Grid xs={12} md={4} item>
-                        location
+                    <Grid xs={12} md={4} item className={classes.contactBox} >
+                        <div>
+                            <Typography align="center" variant="h4">Contact Info</Typography>
+                        </div>
+                        <div>
+                            <Typography align="left" variant="body1">Phone number</Typography>
+                        </div>
+                        <div>
+                            <Typography align="left" variant="body1">Email</Typography>
+                        </div>
+                        <div>
+                            <Typography align="left" variant="body1">Address</Typography>
+                        </div>
                     </Grid>
                     <Grid xs={12} md={4} item>
                         logo

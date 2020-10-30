@@ -7,17 +7,21 @@ import bellyImg from '../../resources/images/HR-102.jpg'
 
 const useStyles = makeStyles((theme) => ({
     root: {
-
+        height: '60vh',
+        [theme.breakpoints.down('sm')]: {
+         height: "80vh",
+       },
     },
     container: {
-       height: '400px'
+        height: '85%'
     },
     textBox: {
         background: theme.palette.secondary.light,
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        padding: theme.spacing(6)
+        padding: theme.spacing(6),
+       
     },
     text: {
         width: '60%',
@@ -34,8 +38,13 @@ const useStyles = makeStyles((theme) => ({
     foot: {
         background: theme.palette.primary.light,
         color: theme.palette.common.white,
-        padding: theme.spacing(3)
+        padding: theme.spacing(3),
+        width: '50%',
+        
 
+    },
+    footItemBox: {
+       
     }
 }));
 
@@ -60,11 +69,16 @@ const BellyBanner = () => {
                     </Grid>
                 </Grid>
             </Grid>
-            <Grid container>
+            <Grid container  >
                 <Grid container item xs={12} className={classes.foot}>
-                    <Grid item xs={12}>
+                    <Grid item xs={12} md={6} >
                         <Typography variant="h4" align="center" >
-                            hot room. cool people.
+                            hot room. 
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={12} md={6} >
+                        <Typography variant="h4" align="center" >
+                           cool people.
                         </Typography>
                     </Grid>
                 </Grid>

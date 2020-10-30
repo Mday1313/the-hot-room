@@ -29,7 +29,7 @@ let theme = createMuiTheme({
       main: '#f00',
     },
     background: {
-      default: '#fff',
+        default: '#fff',
     },
     grey: {
       '50': '#fafafa',
@@ -48,6 +48,7 @@ let theme = createMuiTheme({
       A700: '#616161',
     },
   },
+ 
   typography: {
     fontFamily: '"Josefin Sans", "Roboto", "Helvetica", "Arial", sans-serif',
 

@@ -12,7 +12,7 @@ import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
-// TODO: Replace with studio images
+// TODO: Add alt content for studio images
 const tutorialSteps = [
   {
     label: '',
@@ -82,6 +82,7 @@ function SwipeableTextMobileStepper() {
         enableMouseEvents
         interval="5000"
       >
+        
         {tutorialSteps.map((step, index) => (
           <div key={step.label}>
             {Math.abs(activeStep - index) <= 2 ? (
