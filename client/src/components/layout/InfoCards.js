@@ -5,6 +5,12 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 
+const infoCards = [
+  {id: 1, icon: 'A', content: 'life is too short to live in pain'},
+  {id: 2, icon: 'B', content: 'you have the power to reclaim your health'},
+  {id: 3, icon: 'C', content: 'lorem ipsum'}
+];
+
 const useStyles = makeStyles((theme) => ({
     root: {
         backgroundColor: theme.palette.primary.light,
@@ -17,14 +23,37 @@ const useStyles = makeStyles((theme) => ({
       maxWidth: '1000px',
     },
     header: {
-      padding: '48px',
+      paddingTop: theme.spacing(6),
+      paddingBottom: theme.spacing(10)
+    },
+    infoContainer: {
+      position: 'relative',
     },
     paper: {
         // width: '200px',
-        margin: theme.spacing(2),
+        margin: theme.spacing(4),
         display: 'flex',
         justifyContent: 'space-around',
-        height: '100%'
+        height: '300px',
+        border: `2px solid ${theme.palette.primary.main} `
+
+    },
+    icon: {
+      width: '100px',
+      height: '100px',
+      backgroundColor: theme.palette.primary.main,
+      borderRadius: '50%',
+      margin: 'auto',
+      position: 'absolute',
+      top: '-30px',
+      left: '135px',
+      [theme.breakpoints.up('md')]: {
+        left: '115px',
+      },
+      
+    },
+    infoContent: {
+      padding: theme.spacing(5)
     },
     btnContainer: {
       padding: '48px'
@@ -46,24 +75,30 @@ const InfoCards = ({  }) => {
           <Grid container className={classes.container} >
             <Grid container item xs={12} justify="center" >
               <Grid item xs={12} >
-                <Typography variant="h4" color="primary" align="center" className={classes.header}>
-                  life is too short to live in pain
+                <Typography variant="h3" color="primary" align="center" className={classes.header}>
+                    why join the hot room yoga & wellness
                 </Typography>
               </Grid>
               
             </Grid>
           
             <Grid container item xs={12} justify="space-around" spacing={1}>
-              {[0, 1, 2].map((value) => (
-                <Grid key={value} xs={12} sm={4} item>
-                  <Paper className={classes.paper} >Hello</Paper>
+              {infoCards.map((infoCard) => (
+                <Grid key={infoCards.id} xs={12} sm={4} item className={classes.infoContainer}>
+                    <div className={classes.icon}>
+                      
+                    </div>
+                  <Paper className={classes.paper} >
+                   
+                    <Typography align="center" variant="h5" className={classes.infoContent}>{infoCard.content}</Typography>
+                  </Paper>
                 </Grid>
               ))}
             </Grid>
 
           <Grid className={classes.btnContainer} container item xs={12} justify="center">
             <Grid className={classes.btnHead} item xs={12}>
-              <Typography variant="h6" color="primary" align="center" >
+              <Typography variant="h4" color="primary" align="center" >
                 get pain free today
               </Typography>
             </Grid>

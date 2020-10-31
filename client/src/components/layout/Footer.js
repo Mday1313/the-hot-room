@@ -5,6 +5,8 @@ import Button from "@material-ui/core/Button";
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
+import logo from '../../resources/images/logo.jpg'
+import Contact from '../../components/common/ContactForm'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -19,13 +21,23 @@ const useStyles = makeStyles((theme) => ({
         color: theme.palette.common.white,
         minHeight: '100px'
       }, 
-      contactBox: {
+      infoBox: {
         display: 'flex',
         justifyContent: 'space-between',
         alignContent: 'center',
         flexDirection: 'column',
-        width: '80',
+        width: '80%',
         margin: 'auto'
+      },
+      logoBox: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignContent: 'center',
+        flexDirection: 'column',
+        margin: 'auto'
+      },
+      contactBox: {
+    
       },
       copyright: {
         backgroundColor: '#424242',
@@ -46,25 +58,31 @@ const Footer = ({  }) => {
         <footer align="bottom" position="fixed" className={classes.root}>
             <Grid container >
                 <Grid xs={12} container item className={classes.container} align="center">
-                    <Grid xs={12} md={4} item className={classes.contactBox} >
-                        <div>
-                            <Typography align="center" variant="h4">Contact Info</Typography>
-                        </div>
-                        <div>
-                            <Typography align="left" variant="body1">Phone number</Typography>
-                        </div>
-                        <div>
-                            <Typography align="left" variant="body1">Email</Typography>
-                        </div>
-                        <div>
-                            <Typography align="left" variant="body1">Address</Typography>
-                        </div>
+                    <Grid xs={12} md={4} item className={classes.infoBox} >
+                        
+                        <Typography align="center" variant="h4">Contact Info</Typography>
+                    
+                    
+                        <Typography align="left" variant="body1">Phone number</Typography>
+                    
+                    
+                        <Typography align="left" variant="body1">Email</Typography>
+                    
+                    
+                        <Typography align="left" variant="body1">Address</Typography>
+                       
                     </Grid>
-                    <Grid xs={12} md={4} item>
-                        logo
+                    <Grid xs={12} md={4} item className={classes.logoBox} align="center">
+                        <div>
+                            <img src={logo} alt="the hot room logo" className={classes.logo}></img>
+                        </div>
+                        <Typography variant="h2">the hot room</Typography> 
                     </Grid>
-                    <Grid xs={12} md={4} item>
-                        contact us
+                    <Grid xs={12} md={4} item className={classes.contactBox}>
+                       
+                            <Typography align="left" variant="h4">Let's Chat</Typography>
+                        
+                        <Contact />
                     </Grid>
                 </Grid>
                 

@@ -9,6 +9,9 @@ let theme = createMuiTheme({
       grey: '#707070',
       white: '#fff',
     },
+    info: {
+        main: '#fff'
+    },
     // Green
     primary: {
         main: '#056571',
