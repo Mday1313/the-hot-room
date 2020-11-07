@@ -4,13 +4,43 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import EventCard from '../../components/common/EventCard';
 
-
+const events = [
+    {
+        name: '',
+        date: '',
+        time: '',
+        location: '',
+        instructor: '',
+        status: '',
+        image: ''
+    },
+    {
+        name: '',
+        date: '',
+        time: '',
+        location: '',
+        instructor: '',
+        status: '',
+        image: ''
+    },
+    {
+        name: '',
+        date: '',
+        time: '',
+        location: '',
+        instructor: '',
+        status: '',
+        image: ''
+    }
+]
 
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        height: '100%',
+        paddingTop: theme.spacing(10)
     },
     container: {
       maxWidth: '1000px',
@@ -49,8 +79,8 @@ const Events = () => {
         <div className={classes.root}>
           <Grid container className={classes.container} >
               <Grid container item xs={12} justify="space-around"  className={classes.events}>
-                {[0, 1, 2].map((value) => (
-                  <EventCard />
+                {events.map((value) => (
+                  <EventCard event={{...value}} />
                 ))}
               </Grid>
            

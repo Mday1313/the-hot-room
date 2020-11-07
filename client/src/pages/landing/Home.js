@@ -5,6 +5,7 @@ import InfoCards from '../../components/layout/InfoCards';
 import Reviews from '../../components/layout/Reviews';
 import BellyBanner from '../../components/layout/BellyBanner';
 import Events from '../../components/layout/Events';
+import Partners from '../../components/layout/Partners';
 
 const Home = () => {
     return (
@@ -16,6 +17,7 @@ const Home = () => {
            <BellyBanner />
            {/* <StudioInfo /> */}
            <Events />
+           <Partners />
         </div>
     )
 }

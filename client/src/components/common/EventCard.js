@@ -11,14 +11,15 @@ import image1 from '../../resources/images/header1.jpg';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: '100vw',
+    // maxWidth: '100vw',
   },
   media: {
-    height: 140,
+    height: '300px',
+    width: '300px'
   },
 });
 
-export default function MediaCard() {
+const EventCard = ({props}) => {
   const classes = useStyles();
 
   return (
@@ -29,7 +30,10 @@ export default function MediaCard() {
           image={image1}
           title="Contemplative Reptile"
         />
+        hello
       </CardActionArea>
     </Card>
   );
 }
+
+export default EventCard;

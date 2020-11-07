@@ -1,20 +1,17 @@
 import React from 'react'
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import Button from "@material-ui/core/Button";
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
-import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import logo from '../../resources/images/logo_text_gr.png'
 import Contact from '../../components/common/ContactForm';
+import IconButton from '@material-ui/core/IconButton';
+import FacebookIcon from '@material-ui/icons/Facebook'
+import InstagramIcon from '@material-ui/icons/Instagram'
 
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-        // display: 'flex',
-        // alignItems: 'center',
-        // justifyContent: 'center'
-    },
+   
     container: {
         padding: '48px',
         marginTop: 'auto',
@@ -28,23 +25,27 @@ const useStyles = makeStyles((theme) => ({
         alignContent: 'space-around',
         flexDirection: 'column',
         width: '80%',
-        // margin: 'auto'
       },
       map: {
-          height: '50%'
+          width: '100%',
+          paddingTop: theme.spacing(3)
       },
       logoBox: {
         display: 'flex',
-        justifyContent: 'center',
+        justifyContent: 'space-around',
         alignContent: 'center',
         flexDirection: 'column',
-        margin: 'auto'
       },
       logo: {
-        maxWidth: '400px'
+        maxWidth: '100%'
       },
       contactBox: {
-    
+        maxWidth: '400px',
+        margin: 'auto'
+      },
+      socialLink: {
+        margin: theme.spacing(3),
+        color: theme.palette.secondary.light,
       },
       copyright: {
         backgroundColor: '#424242',
@@ -59,8 +60,6 @@ const useStyles = makeStyles((theme) => ({
 const Footer = ({  }) => {
     const classes = useStyles();
  
-
-
     return (
         <BottomNavigation  className={classes.root}>
             <Grid container >
@@ -81,13 +80,13 @@ const Footer = ({  }) => {
                         <div className={classes.map}>
                            <iframe 
                                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12916.912109704223!2d-86.8171942!3d35.9658502!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x510982bafcc09853!2sThe%20Hot%20Room%20Yoga%20%26%20Wellness!5e0!3m2!1sen!2sus!4v1604772767621!5m2!1sen!2sus" 
-                                width="400" 
+                              
                                 height="200" 
                                 frameborder="0"  
                                 allowfullscreen="true" 
                                 aria-hidden="false" 
                                 tabindex="0">
-                            </iframe>"
+                            </iframe>
                            
                         </div>
                        
@@ -96,9 +95,15 @@ const Footer = ({  }) => {
                         <div>
                             <img src={logo} alt="the hot room logo" className={classes.logo}></img>
                         </div>
-                        <div>
-                            {/* Facebook Icon */}
-                            {/* Instagram Icon */}
+                        <div >
+                            <IconButton href="https://www.facebook.com/TheHotRoomTN/">
+                                <FacebookIcon fontSize="large" className={classes.socialLink}  />
+                            </IconButton>
+                            
+                            <IconButton href="https://www.instagram.com/thehotroomtn/">
+                                <InstagramIcon fontSize="large" className={classes.socialLink}  />
+                            </IconButton>
+                            
                         </div>
                         
                     </Grid>
