@@ -4,6 +4,7 @@ import CallToAction from '../../components/layout/CallToAction';
 import InfoCards from '../../components/layout/InfoCards';
 import Reviews from '../../components/layout/Reviews';
 import BellyBanner from '../../components/layout/BellyBanner';
+import Events from '../../components/layout/Events';
 
 const Home = () => {
     return (
@@ -13,6 +14,8 @@ const Home = () => {
            <InfoCards />
            <Reviews />
            <BellyBanner />
+           {/* <StudioInfo /> */}
+           <Events />
         </div>
     )
 }

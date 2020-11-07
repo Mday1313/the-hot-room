@@ -13,7 +13,7 @@ const infoCards = [
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        backgroundColor: theme.palette.primary.light,
+        backgroundColor: theme.palette.info.main,
        
         display: 'flex',
         alignItems: 'center',
@@ -23,8 +23,8 @@ const useStyles = makeStyles((theme) => ({
       maxWidth: '1000px',
     },
     header: {
-      paddingTop: theme.spacing(6),
-      paddingBottom: theme.spacing(10)
+      paddingTop: theme.spacing(8),
+      paddingBottom: theme.spacing(12)
     },
     infoContainer: {
       position: 'relative',
@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'space-around',
         height: '300px',
-        border: `2px solid ${theme.palette.primary.main} `
+        border: `2px solid ${theme.palette.primary.main}`
 
     },
     icon: {
@@ -82,13 +82,13 @@ const InfoCards = ({  }) => {
               
             </Grid>
           
-            <Grid container item xs={12} justify="space-around" spacing={1}>
+            <Grid container item xs={12} justify="space-around" spacing={2}>
               {infoCards.map((infoCard) => (
-                <Grid key={infoCards.id} xs={12} sm={4} item className={classes.infoContainer}>
+                <Grid key={infoCards.id} xs={12} sm={4}  item className={classes.infoContainer}>
                     <div className={classes.icon}>
                       
                     </div>
-                  <Paper className={classes.paper} >
+                  <Paper className={classes.paper} spacing={2} elevation={3}>
                    
                     <Typography align="center" variant="h5" className={classes.infoContent}>{infoCard.content}</Typography>
                   </Paper>

@@ -5,14 +5,15 @@ import Button from "@material-ui/core/Button";
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
-import logo from '../../resources/images/logo.jpg'
-import Contact from '../../components/common/ContactForm'
+import logo from '../../resources/images/logo_text_gr.png'
+import Contact from '../../components/common/ContactForm';
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center'
+        // display: 'flex',
+        // alignItems: 'center',
+        // justifyContent: 'center'
     },
     container: {
         padding: '48px',
@@ -24,10 +25,13 @@ const useStyles = makeStyles((theme) => ({
       infoBox: {
         display: 'flex',
         justifyContent: 'space-between',
-        alignContent: 'center',
+        alignContent: 'space-around',
         flexDirection: 'column',
         width: '80%',
-        margin: 'auto'
+        // margin: 'auto'
+      },
+      map: {
+          height: '50%'
       },
       logoBox: {
         display: 'flex',
@@ -35,6 +39,9 @@ const useStyles = makeStyles((theme) => ({
         alignContent: 'center',
         flexDirection: 'column',
         margin: 'auto'
+      },
+      logo: {
+        maxWidth: '400px'
       },
       contactBox: {
     
@@ -55,32 +62,49 @@ const Footer = ({  }) => {
 
 
     return (
-        <footer align="bottom" position="fixed" className={classes.root}>
+        <BottomNavigation  className={classes.root}>
             <Grid container >
                 <Grid xs={12} container item className={classes.container} align="center">
                     <Grid xs={12} md={4} item className={classes.infoBox} >
                         
-                        <Typography align="center" variant="h4">Contact Info</Typography>
+                        <Typography align="center" variant="h4">Studio Info</Typography>
                     
                     
-                        <Typography align="left" variant="body1">Phone number</Typography>
+                        <Typography align="center" variant="body1"><b>Phone:</b> 615-457-3075</Typography>
                     
                     
-                        <Typography align="left" variant="body1">Email</Typography>
+                        <Typography align="center" variant="body1"><b>Email:</b> info@thehotroomtn.com</Typography>
                     
                     
-                        <Typography align="left" variant="body1">Address</Typography>
+                        <Typography align="center" variant="body1"><b>Address:</b> 93 seaboard lane, #1004 <br></br>brentwood, tn 37027</Typography>
+
+                        <div className={classes.map}>
+                           <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12916.912109704223!2d-86.8171942!3d35.9658502!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x510982bafcc09853!2sThe%20Hot%20Room%20Yoga%20%26%20Wellness!5e0!3m2!1sen!2sus!4v1604772767621!5m2!1sen!2sus" 
+                                width="400" 
+                                height="200" 
+                                frameborder="0"  
+                                allowfullscreen="true" 
+                                aria-hidden="false" 
+                                tabindex="0">
+                            </iframe>"
+                           
+                        </div>
                        
                     </Grid>
                     <Grid xs={12} md={4} item className={classes.logoBox} align="center">
                         <div>
                             <img src={logo} alt="the hot room logo" className={classes.logo}></img>
                         </div>
-                        <Typography variant="h2">the hot room</Typography> 
+                        <div>
+                            {/* Facebook Icon */}
+                            {/* Instagram Icon */}
+                        </div>
+                        
                     </Grid>
                     <Grid xs={12} md={4} item className={classes.contactBox}>
                        
-                            <Typography align="left" variant="h4">Let's Chat</Typography>
+                        <Typography align="center" variant="h4">Let's Chat</Typography>
                         
                         <Contact />
                     </Grid>
@@ -97,7 +121,7 @@ const Footer = ({  }) => {
             </Grid> 
            
     
-       </footer>
+       </BottomNavigation>
     )
 };
   

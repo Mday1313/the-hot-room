@@ -2,7 +2,6 @@ import React from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Typography from "@material-ui/core/Typography";
 import Grid from '@material-ui/core/Grid';
-import { flexbox } from '@material-ui/system';
 import bellyImg from '../../resources/images/HR-102.jpg'
 
 const useStyles = makeStyles((theme) => ({
@@ -71,16 +70,16 @@ const BellyBanner = () => {
             </Grid>
             <Grid container  >
                 <Grid container item xs={12} className={classes.foot}>
-                    <Grid item xs={12} md={6} >
-                        <Typography variant="h4" align="center" >
-                            hot room. 
+                    <Grid item xs={12} >
+                        <Typography variant="h3" align="center" >
+                            hot room. cool people.
                         </Typography>
                     </Grid>
-                    <Grid item xs={12} md={6} >
+                    {/* <Grid item xs={12} md={6} >
                         <Typography variant="h4" align="center" >
                            cool people.
                         </Typography>
-                    </Grid>
+                    </Grid> */}
                 </Grid>
             </Grid>
         </div>
