@@ -6,34 +6,29 @@ import Grid from '@material-ui/core/Grid'
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
-    container: {
-      maxWidth: '1000px',
-      paddingBottom: theme.spacing(6),
+      display: 'flex',
+      alignItems: 'flex-start',
+      padding: theme.spacing(2),
       
     },
-    reviews: {
-        display: 'flex',
-        justifyContent: 'space-between',
-        padding: theme.spacing(1)
-    },
-    header: {
-      padding: '48px',
-    },
-    paper: {
-        // width: '200px',
-        margin: theme.spacing(1),
-        display: 'flex',
-        justifyContent: 'space-around',
-        height: '150px',
-        
-    },
+    
     btn: {
       padding: '48px'
       
+    },
+    name: {
+  
+    },
+    reviewer: {
+      fontWeight: '600'
+    },
+    review: {
+      color: theme.palette.grey['600'],
+      height: '100px',
+      paddingTop: theme.spacing(1)
+    },
+    source: {
+      alignItems: 'flex-end',
     },
     text: {
         color: theme.palette.secondary.dark
@@ -46,11 +41,17 @@ const ReviewCard = () => {
       return (
         <div className={classes.root}>
           <Grid container className={classes.container} >
-            <Grid container item xs={12} justify="center" >
-              <Grid item xs={12} >
-                <Typography variant="h5" color="primary" align="center" className={classes.header}>what people are saying about us</Typography>
+            <Grid container item xs={12}  >
+              <Grid item xs={12} className={classes.name}>
+                <Typography variant="body1" color="primary" align="right" className={classes.reviewer}>Reviewer Name</Typography>
+                <Typography variant="body2" color="primary" align="right" className={classes.stars}>5 Stars</Typography>
               </Grid>
-              
+              <Grid item xs={12} className={classes.review}>
+                <Typography variant="body1"  align="center" >review goes here</Typography>
+              </Grid>
+              <Grid item xs={12} className={classes.source}>
+                <Typography variant="body1" color="primary" align="right" >Source - date</Typography>
+              </Grid>
             </Grid>
            
            

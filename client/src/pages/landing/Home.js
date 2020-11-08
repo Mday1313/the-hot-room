@@ -6,16 +6,18 @@ import Reviews from '../../components/layout/Reviews';
 import BellyBanner from '../../components/layout/BellyBanner';
 import Events from '../../components/layout/Events';
 import Partners from '../../components/layout/Partners';
+import StudioInfo from '../../components/layout/StudioInfo';
 
 const Home = () => {
     return (
         <div>
            <Hero />
            <CallToAction />
-           <InfoCards />
-           <Reviews />
+           <StudioInfo />
            <BellyBanner />
-           {/* <StudioInfo /> */}
+           <Reviews />
+           <InfoCards />
+           
            <Events />
            <Partners />
         </div>

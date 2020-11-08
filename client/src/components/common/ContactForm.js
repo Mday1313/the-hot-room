@@ -52,7 +52,7 @@ export default function ContactForm() {
             label="Email"
             />
         </FormControl>
-         <FormControl color="info" fullWidth className={classes.margin} variant="outlined">
+         <FormControl  fullWidth className={classes.margin} variant="outlined">
           <InputLabel  className={classes.input} htmlFor="comment">Comment</InputLabel>
           <OutlinedInput
            

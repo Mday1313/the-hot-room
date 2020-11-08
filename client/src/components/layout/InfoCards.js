@@ -84,7 +84,7 @@ const InfoCards = ({  }) => {
           
             <Grid container item xs={12} justify="space-around" spacing={2}>
               {infoCards.map((infoCard) => (
-                <Grid key={infoCards.id} xs={12} sm={4}  item className={classes.infoContainer}>
+                <Grid key={infoCard.id} xs={12} sm={4}  item className={classes.infoContainer}>
                     <div className={classes.icon}>
                       
                     </div>

@@ -6,7 +6,7 @@ let theme = createMuiTheme({
     type: 'light',
     common: {
       black: '#000',
-      grey: '#707070',
+      grey: '#4a4a4a',
       white: '#fff',
     },
     info: {
@@ -14,8 +14,8 @@ let theme = createMuiTheme({
     },
     // Green
     primary: {
-        main: '#056571',
-        light: '#bee8e5',
+        main: '#5a7bb1',
+        light: '#acd3f2',
         contrastText: '#fff',
       
     },

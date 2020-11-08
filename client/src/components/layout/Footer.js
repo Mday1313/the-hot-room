@@ -2,7 +2,6 @@ import React from 'react'
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
-import BottomNavigation from '@material-ui/core/BottomNavigation';
 import logo from '../../resources/images/logo_text_gr.png'
 import Contact from '../../components/common/ContactForm';
 import IconButton from '@material-ui/core/IconButton';
@@ -11,7 +10,10 @@ import InstagramIcon from '@material-ui/icons/Instagram'
 
 
 const useStyles = makeStyles((theme) => ({
-   
+//    root: {
+//         position: 'relative',
+//         bottom: '0'
+//    },
     container: {
         padding: '48px',
         marginTop: 'auto',
@@ -61,7 +63,7 @@ const Footer = ({  }) => {
     const classes = useStyles();
  
     return (
-        <BottomNavigation  className={classes.root}>
+        <footer  className={classes.root}>
             <Grid container >
                 <Grid xs={12} container item className={classes.container} align="center">
                     <Grid xs={12} md={4} item className={classes.infoBox} >
@@ -82,10 +84,10 @@ const Footer = ({  }) => {
                                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12916.912109704223!2d-86.8171942!3d35.9658502!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x510982bafcc09853!2sThe%20Hot%20Room%20Yoga%20%26%20Wellness!5e0!3m2!1sen!2sus!4v1604772767621!5m2!1sen!2sus" 
                               
                                 height="200" 
-                                frameborder="0"  
-                                allowfullscreen="true" 
-                                aria-hidden="false" 
-                                tabindex="0">
+                                frameBorder="0"  
+                                allowFullScreen={true} 
+                                // aria-hidden={false} 
+                                tabIndex="0">
                             </iframe>
                            
                         </div>
@@ -117,16 +119,16 @@ const Footer = ({  }) => {
                 
                 <Grid xs={12} container item className={classes.copyright} justify="center" align="center">
                     <Grid item xs={12}>
-                        <Typography variant="body" >&#169; 2020 the hot room</Typography>
+                        <Typography variant="body1" >&#169; 2020 the hot room</Typography>
                     </Grid>
                     <Grid item xs={12}>
-                        <Typography variant="body" >Built by Melissa Day</Typography>
+                        <Typography variant="body1" >Built by Melissa Day</Typography>
                     </Grid>
                 </Grid>
             </Grid> 
            
     
-       </BottomNavigation>
+       </footer>
     )
 };
   

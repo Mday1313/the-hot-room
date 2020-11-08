@@ -60,7 +60,8 @@ const useStyles = makeStyles((theme) => ({
         margin: 'auto'
     },
     title: {
-        paddingBottom: theme.spacing(3)
+        paddingBottom: theme.spacing(3),
+        color: theme.palette.common.grey
     },
     logos: {
         display: 'flex',
@@ -82,7 +83,7 @@ const Partners = () => {
             <Grid container className={classes.container}>
                 <Grid container item className={classes.textBox}>
                     <Grid item xs={12} className={classes.title}>
-                        <Typography variant="h3" align="center" color="primary">Partners</Typography>
+                        <Typography variant="h3" align="center" >Partners</Typography>
                     </Grid>
                     <Grid item xs={12} className={classes.subtitle}>
                         <Typography align="center" variant="subtitle1" color="primary">we have partnered with our favorite brands to enhance your experience at the studio! check them out online and in the studio!</Typography>
@@ -91,7 +92,7 @@ const Partners = () => {
                 <Grid container item className={classes.logos} align="center">
                     {/* map through image list */}
                     {partners.map((value) => (
-                    <Grid key={value} sm={2} xs={12} spacing={3} item className={classes.logo}>
+                    <Grid key={value.alt} sm={2} xs={12} item className={classes.logo}>
                         <Link href={value.link}>
                             <img src={value.imgPath} alt={value.alt} width="150px"/>
                         </Link>

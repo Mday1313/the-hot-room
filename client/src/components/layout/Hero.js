@@ -15,18 +15,18 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 // TODO: Add alt content for studio images
 const tutorialSteps = [
   {
-    label: '',
+    label: '1',
     imgPath: image1,
   },
 
   {
-    label: '',
+    label: '2',
     imgPath:
       image2,
   },
  
   {
-    label: '',
+    label: '3',
     imgPath:
       image3,
   },
@@ -80,7 +80,7 @@ function SwipeableTextMobileStepper() {
         index={activeStep}
         onChangeIndex={handleStepChange}
         enableMouseEvents
-        interval="5000"
+        interval={5000}
       >
         
         {tutorialSteps.map((step, index) => (

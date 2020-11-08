@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -12,10 +12,16 @@ import Link from 'react-router-dom/Link';
 // import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
+import logo from '../../resources/images/logos/logo_blk.png';
 
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
+      
+    },
+    nav: {
+        // backgroundColor: theme.palette.common.white,
+        // color: theme.palette.primary.main
     },
     menuButton: {
         marginRight: theme.spacing(2),
@@ -24,6 +30,19 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
     },
 }));
+
+const StyledMenuItem = withStyles((theme) => ({
+    root: {
+        padding: theme.spacing(2),
+        color: theme.palette.primary.main,
+      '&:focus': {
+        backgroundColor: theme.palette.primary.light,
+        '& .MuiListItemIcon-root, & .MuiListItemText-primary': {
+          color: theme.palette.primary.main,
+        },
+      },
+    },
+  }))(MenuItem);
 
 export default function NavBar() {
     const classes = useStyles();
@@ -46,12 +65,12 @@ export default function NavBar() {
     return (
         <div className={classes.root}>
        
-        <AppBar position="static">
+        <AppBar position="static" className={classes.nav}>
             <Toolbar>
                 {/* replace with logo */}
             {/* <Link to='/'>  */}
-                <Typography variant="h6" className={classes.title}>
-                    The Hot Room Yoga & Wellness
+                <Typography variant="h6" component={Link} to="/" className={classes.title}>
+                   <img src={logo} alt="the hot room" />
                 </Typography>
             {/* </Link>   */}
             <IconButton
@@ -77,34 +96,35 @@ export default function NavBar() {
                     }}
                     open={open}
                     onClose={handleClose}
+                    className={classes.menu}
+                  
                 >
-                     <Link to='/about'>
-                        <MenuItem onClick={handleClose}>About Us</MenuItem>
-                     </Link>
-                     <Link to='/pricing'>
-                        <MenuItem onClick={handleClose}>Pricing</MenuItem>
-                     </Link>
-                     <Link to='/events'>
-                        <MenuItem onClick={handleClose}>Events</MenuItem>
-                     </Link>
-                     <Link to='/contact-us'>
-                        <MenuItem onClick={handleClose}>Contact Us</MenuItem>
-                     </Link>
-                     <Link to='/register'>
-                        <MenuItem onClick={handleClose}>Register</MenuItem>
-                     </Link>
-                     <Link to='/login'>
-                        <MenuItem onClick={handleClose}>Login</MenuItem>
-                     </Link>
+                    
+                    <StyledMenuItem onClick={handleClose} component={Link} to='/about' >About Us </StyledMenuItem>
+                    
+                    <StyledMenuItem onClick={handleClose} component={Link} to='/pricing' >Pricing</StyledMenuItem>
+                     
+                    <StyledMenuItem onClick={handleClose} component={Link} to='/classes' >Class Descriptions</StyledMenuItem>
+
+                    <StyledMenuItem onClick={handleClose} component={Link} to='/events' >Upcoming Events </StyledMenuItem>
+                    
+                    <StyledMenuItem onClick={handleClose} component={Link} to='/econtact-us' >Contact Us</StyledMenuItem>
+
+                     <StyledMenuItem onClick={handleClose} component={Link} to='/register' >Member Registration</StyledMenuItem>
+                     
+                     {!auth && (
+                         <div>
+                            <StyledMenuItem onClick={handleClose} component={Link} to='/login' >Log in</StyledMenuItem>
+                         </div>
+                     )}
+                    
 
 
                     {auth && (
                         <div>
-                            <Link to='/dashboard'>
-                                <MenuItem onClick={handleClose}>Dashboard</MenuItem>
-                            </Link>
+                          <StyledMenuItem onClick={handleClose} component={Link} to='/dashboard' >Member Dashboard</StyledMenuItem>
                             
-                         
+                          <StyledMenuItem onClick={handleClose} component={Link} to='/signout' >Log Out</StyledMenuItem>
                         </div>
                     )}
                 </Menu>
@@ -118,7 +138,7 @@ export default function NavBar() {
                     onClick={handleMenu}
                     color="inherit"
                 >
-                    <AccountCircle />
+                    {/* <AccountCircle /> */}
                 </IconButton>
                 
                 </div>
