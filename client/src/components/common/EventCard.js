@@ -11,11 +11,13 @@ import image1 from '../../resources/images/header1.jpg';
 
 const useStyles = makeStyles({
   root: {
-    // maxWidth: '100vw',
+    // width: '100vw',
+   
   },
   media: {
     height: '300px',
     width: '300px'
+    
   },
 });
 

@@ -55,12 +55,12 @@ const useStyles = makeStyles((theme) => ({
     header: {
       padding: '48px',
     },
-    paper: {
+    card: {
         // width: '200px',
-        margin: theme.spacing(1),
+        
         display: 'flex',
         justifyContent: 'space-around',
-        height: '150px',
+        
         
     },
     btn: {
@@ -80,7 +80,9 @@ const Events = () => {
           <Grid container className={classes.container} >
               <Grid container item xs={12} justify="space-around"  className={classes.events}>
                 {events.map((value) => (
-                  <EventCard event={{...value}} />
+                    <Grid xs={12} md={4} item className={classes.card}>
+                        <EventCard event={{...value}} />
+                    </Grid>
                 ))}
               </Grid>
            
