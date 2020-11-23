@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         justifyContent: 'center',
         height: '100%',
-       
+        background: theme.palette.common.white
     },
     container: {
       maxWidth: '1000px',

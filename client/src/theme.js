@@ -14,16 +14,18 @@ let theme = createMuiTheme({
     },
     // Green
     primary: {
-        main: '#5a7bb1',
-        light: '#acd3f2',
+        main: '#7498be',
+        light: '#b8cddd',
+        dark: '#164576',
         contrastText: '#fff',
-      
+        overlay: 'rgba(116, 152, 190, .6)'
     },
     // Orange
     secondary: {
         main: '#f26346',
         light: '#fedcd2',
         contrastText: '#fff',
+        overlay: 'rgba(254, 220, 210, .5)'
     },
     success: {
       main: '#4caf50'
@@ -33,6 +35,8 @@ let theme = createMuiTheme({
     },
     background: {
         default: '#fff',
+        grey: 'fafafa',
+        
     },
     grey: {
       '50': '#fafafa',
@@ -53,7 +57,13 @@ let theme = createMuiTheme({
   },
  
   typography: {
-    fontFamily: '"Josefin Sans", "Roboto", "Helvetica", "Arial", sans-serif',
+    default: {
+      fontFamily: '"Josefin Sans", "Roboto", "Helvetica", "Arial", sans-serif',
+    },
+    events: {
+      fontFamily: "'The Girl Next Door', cursive",
+    }
+    
 
   },
   

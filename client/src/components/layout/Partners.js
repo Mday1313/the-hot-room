@@ -49,10 +49,10 @@ const partners = [
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        backgroundColor: theme.palette.common.white
+        backgroundColor: theme.palette.background.grey
     },
     container: {
-        padding: theme.spacing(2)
+        padding: theme.spacing(1)
     },
     textBox: {
         padding: theme.spacing(4),

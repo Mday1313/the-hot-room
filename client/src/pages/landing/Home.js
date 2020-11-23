@@ -15,9 +15,9 @@ const Home = () => {
            <CallToAction />
            <StudioInfo />
            <BellyBanner />
-           <Reviews />
+         
            <InfoCards />
-           
+           <Reviews />
            <Events />
            <Partners />
         </div>
