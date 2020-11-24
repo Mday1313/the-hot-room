@@ -8,6 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
+import Avatar from '@material-ui/core/Avatar';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -25,7 +26,17 @@ const useStyles = makeStyles((theme) => ({
         bottom: '45px',
         left: 0,
         right: 0,
-        fontFamily: '"The Girl Next Door", cursive',
+        fontFamily: 'cursive',
+    },
+    avatarContainer: {
+        display: 'flex',
+        justifyContent: 'start', 
+       alignItems: 'center'
+    },
+    avatar: {
+        margin: '5px',
+        width: theme.spacing(4),
+        height: theme.spacing(4),
     },
     paper: {
         height: '600px',
@@ -34,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column',
         justifyContent: 'center',
         alignContent: 'center',
-        position: 'relative'
+        position: 'relative',
         
     }
 }))
@@ -50,16 +61,22 @@ const FullEvent = (props) => {
                     image={props.event.image}
                     title={props.event.title}
                     />
-                <div className={classes.layer} >
-                    <CardContent>
-                        <Typography variant="h4">{props.event.name}</Typography>
-                        <Typography variant="h6">{props.event.instructor}</Typography>
-                        <Typography variant="h6">{props.event.location}</Typography>
-                        <Typography variant="h6">{props.event.date}</Typography>
-                        <Typography variant="h6">{props.event.time}</Typography>
-                    </CardContent>
-                </div>
-            
+               
+                <CardContent className={classes.layer}>
+                    <Typography variant="h3" >{props.event.name}</Typography>
+                    <Typography variant="h6">{props.event.location}</Typography>
+                    <div className={classes.avatarContainer}>
+                        <Avatar alt="Remy Sharp" src="/src/resources/images/WS-2.jpg" className={classes.avatar} />
+                        <Typography variant="h6" >
+                    
+                    {props.event.instructor}</Typography>
+                    </div>
+                    
+                  
+                    <Typography variant="h6">{props.event.date}</Typography>
+                    <Typography variant="h6">{props.event.time}</Typography>
+                </CardContent>
+             
                 <CardActions>
                     <Button size="small" color="primary">
                     Share

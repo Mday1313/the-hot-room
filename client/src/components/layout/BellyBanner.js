@@ -71,15 +71,10 @@ const BellyBanner = () => {
             <Grid container  >
                 <Grid container item xs={12} className={classes.foot}>
                     <Grid item xs={12} >
-                        <Typography variant="h3" align="center" >
+                        <Typography variant="h2" align="center" >
                             hot room. cool people.
                         </Typography>
                     </Grid>
-                    {/* <Grid item xs={12} md={6} >
-                        <Typography variant="h4" align="center" >
-                           cool people.
-                        </Typography>
-                    </Grid> */}
                 </Grid>
             </Grid>
         </div>

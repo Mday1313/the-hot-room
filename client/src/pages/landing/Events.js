@@ -8,9 +8,9 @@ import Typography from '@material-ui/core/Typography';
 const events = [
     {
         id: 1,
-        name: 'Name',
-        location: 'Place, Place',
-        instructor: 'Instructor',
+        name: 'Costa Rica Retreat',
+        location: 'Costa Rica',
+        instructor: 'Kyle',
         date: 'Month, 11, year',
         time: '3pm',
         url: '',

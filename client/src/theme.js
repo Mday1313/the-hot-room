@@ -57,12 +57,13 @@ let theme = createMuiTheme({
   },
  
   typography: {
-    default: {
+
+ 
       fontFamily: '"Josefin Sans", "Roboto", "Helvetica", "Arial", sans-serif',
-    },
-    events: {
-      fontFamily: "'The Girl Next Door', cursive",
-    }
+      h3: {
+        fontFamily: '"The Girl Next Door", cursive',
+      },
+      useNextVariants: true
     
 
   },
