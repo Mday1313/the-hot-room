@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
+import logo from '../../resources/images/logo_flame.png'
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -26,27 +27,40 @@ const useStyles = makeStyles((theme) => ({
         bottom: '45px',
         left: 0,
         right: 0,
-        fontFamily: 'cursive',
+        display: 'flex',
+        justifyContent: 'space-between',
+        flexDirection: 'column'
     },
+    topText: {
+        paddingTop: theme.spacing(2),
+    
+        textAlign: 'center'
+    },
+    // logo: {
+    //     margin: '0 auto',
+    // },
     avatarContainer: {
         display: 'flex',
         justifyContent: 'start', 
-       alignItems: 'center'
+        alignItems: 'center'
     },
     avatar: {
         margin: '5px',
         width: theme.spacing(4),
         height: theme.spacing(4),
     },
-    paper: {
+    front: {
         height: '600px',
         width: '400px',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignContent: 'center',
-        position: 'relative',
-        
+        position: 'relative',  
+    },
+    back: {
+        background: theme.palette.common.white,
+        display: 'none'
     }
 }))
 
@@ -55,7 +69,7 @@ const FullEvent = (props) => {
 
     return (
         <div className={classes.root}>
-            <Card elevation={3} className={classes.paper} >
+            <Card elevation={3} className={classes.front} >
                 <CardMedia
                     className={classes.media}
                     image={props.event.image}
@@ -63,18 +77,22 @@ const FullEvent = (props) => {
                     />
                
                 <CardContent className={classes.layer}>
-                    <Typography variant="h3" >{props.event.name}</Typography>
-                    <Typography variant="h6">{props.event.location}</Typography>
-                    <div className={classes.avatarContainer}>
-                        <Avatar alt="Remy Sharp" src="/src/resources/images/WS-2.jpg" className={classes.avatar} />
-                        <Typography variant="h6" >
-                    
-                    {props.event.instructor}</Typography>
+                    <div className={classes.topText}>
+                        <img src={logo} className={classes.logo} alt="the hot room" height="50px"/>
+                        <Typography variant="h3" align="center">{props.event.name}</Typography>
                     </div>
-                    
+                    <div className={classes.bottomText}>
+                        <Typography variant="h6">{props.event.location}</Typography>
+                        <div className={classes.avatarContainer}>
+                            <Avatar alt={props.event.instructor} src="/src/resources/images/WS-2.jpg" className={classes.avatar} />
+                            <Typography variant="h6" >
+                        
+                        {props.event.instructor}</Typography>
+                        </div>
+                        <Typography variant="h6">{props.event.date}</Typography>
+                        <Typography variant="h6">{props.event.time}</Typography>
+                    </div>
                   
-                    <Typography variant="h6">{props.event.date}</Typography>
-                    <Typography variant="h6">{props.event.time}</Typography>
                 </CardContent>
              
                 <CardActions>
