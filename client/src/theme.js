@@ -12,7 +12,7 @@ let theme = createMuiTheme({
     info: {
         main: '#fff'
     },
-    // Green
+    // Blue
     primary: {
         main: '#7498be',
         light: '#b8cddd',
@@ -60,6 +60,9 @@ let theme = createMuiTheme({
 
  
       fontFamily: '"Josefin Sans", "Roboto", "Helvetica", "Arial", sans-serif',
+      h1: {
+        fontFamily: '"The Girl Next Door", cursive',
+      },
       h3: {
         fontFamily: '"The Girl Next Door", cursive',
       },

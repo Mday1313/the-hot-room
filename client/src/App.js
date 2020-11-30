@@ -6,7 +6,7 @@ import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer'
 import Home from './pages/landing/Home';
 import Events from './pages/landing/Events';
-import Classes from './pages/landing/Classes';
+import FullClasses from './pages/landing/Classes';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import Alert from './components/layout/Alert';
@@ -23,9 +23,10 @@ const App = () =>
       <Fragment>
         <Navbar />
         <Route exact path="/" component={ Home } />
-        <section className="container">
+        <section className="mainContainer">
           <Alert />
           <Switch>
+            <Route exact path="/classes" component={ FullClasses } />
             <Route exact path="/events" component={ Events } />
             <Route exact path="/register" component={ Register } />
             <Route exact path="/login" component={ Login } />

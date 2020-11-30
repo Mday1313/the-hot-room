@@ -75,7 +75,7 @@ const InfoCards = ({  }) => {
           <Grid container className={classes.container} >
             <Grid container item xs={12} justify="center" >
               <Grid item xs={12} >
-                <Typography variant="h3" color="primary" align="center" className={classes.header}>
+                <Typography variant="h3"  align="center" className={classes.header}>
                     why join the hot room yoga & wellness
                 </Typography>
               </Grid>

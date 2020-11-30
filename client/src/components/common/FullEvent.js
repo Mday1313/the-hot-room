@@ -36,9 +36,6 @@ const useStyles = makeStyles((theme) => ({
     
         textAlign: 'center'
     },
-    // logo: {
-    //     margin: '0 auto',
-    // },
     avatarContainer: {
         display: 'flex',
         justifyContent: 'start', 

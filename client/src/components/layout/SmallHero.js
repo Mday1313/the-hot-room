@@ -5,16 +5,19 @@ import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        width: '100%',
-        flexGrow: 1,
+        width: '100vw',
+        backgroundImage: 'linear-gradient(to bottom right, #ee8b81, #e9c85a, #bee0c6)',
         margin: '0 auto',
-        maxHeight: '250px'
-  
+        maxHeight: '250px',
+        marginBottom: theme.spacing(6),
+        boxShadow: '0 2.8px 2.2px rgba(0, 0, 0, 0.034)',  
     },
     header: {
         display: 'flex',
         justifyContent: 'center',
-        padding: theme.spacing(4)
+        padding: theme.spacing(6),
+        color: theme.palette.common.white,
+        fontWeight: '500'
     },
     img: {
         display: 'block',
@@ -28,9 +31,8 @@ const useStyles = makeStyles((theme) => ({
     return (
         <div className={classes.root}>
               
-                <Typography variant="h2" color="secondary" className={classes.header}>{props.title}</Typography>
+                <Typography variant="h1" className={classes.header}>{props.title}</Typography>
            
-            {/* <img src={props.img} alt={props.alt} width="100%" /> */}
         </div>
     )
   }
