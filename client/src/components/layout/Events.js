@@ -2,46 +2,72 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Typography from "@material-ui/core/Typography";
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-import EventCard from '../../components/common/EventCard';
+
+import SmallEvent from '../../components/common/EventCard';
 import Link from '@material-ui/core/Link';
 
+// ToDO: replace this with ajax call
 const events = [
-    {
-        name: 'Event Name',
-        date: 'Date',
-        time: 'time',
-        location: 'location',
-        instructor: 'instructor',
-        status: '',
-        image: ''
-    },
-    {
-        name: 'Event 2',
-        date: '',
-        time: '',
-        location: '',
-        instructor: '',
-        status: '',
-        image: ''
-    },
-    {
-        name: 'Event 3',
-        date: '',
-        time: '',
-        location: '',
-        instructor: '',
-        status: '',
-        image: ''
-    },
-    {
-      name: '',
-      date: '',
-      time: '',
-      location: '',
-      instructor: '',
-      status: '',
-      image: ''
-  }
+  {
+    id: 1,
+    name: 'Costa Rica Retreat',
+    location: 'Costa Rica',
+    instructor: 'Kyle',
+    date: 'Month, 11, year',
+    time: '3pm',
+    url: '',
+    image: 'https://theknow.denverpost.com/wp-content/uploads/2020/04/GettyImages-1152829238.jpg'
+},
+{
+    id: 2,
+    name: 'Name',
+    location: 'Place, Place',
+    instructor: 'Instructor',
+    date: 'Month, 11, year',
+    time: 'time',
+    url: '',
+    image: 'https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTY0OTE4ODAzMDQwMzE0Njg1/yoga-gettyimages-1142820079-promo.jpg'
+},
+{
+    id: 3,
+    name: 'Name',
+    location: 'Place, Place',
+    instructor: 'Instructor',
+    date: 'Month, 11, year',
+    time: 'time',
+    url: '',
+    image: 'https://etimg.etb2bimg.com/photo/75822133.cms'
+},
+{
+  id: 4,
+  name: 'Costa Rica Retreat',
+  location: 'Costa Rica',
+  instructor: 'Kyle',
+  date: 'Month, 11, year',
+  time: '3pm',
+  url: '',
+  image: 'https://theknow.denverpost.com/wp-content/uploads/2020/04/GettyImages-1152829238.jpg'
+},
+{
+  id: 5,
+  name: 'Name',
+  location: 'Place, Place',
+  instructor: 'Instructor',
+  date: 'Month, 11, year',
+  time: 'time',
+  url: '',
+  image: 'https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTY0OTE4ODAzMDQwMzE0Njg1/yoga-gettyimages-1142820079-promo.jpg'
+},
+{
+  id: 6,
+  name: 'Name',
+  location: 'Place, Place',
+  instructor: 'Instructor',
+  date: 'Month, 11, year',
+  time: 'time',
+  url: '',
+  image: 'https://etimg.etb2bimg.com/photo/75822133.cms'
+},
 ]
 
 const useStyles = makeStyles((theme) => ({
@@ -98,9 +124,9 @@ const Events = () => {
                 </Grid>
               </Grid>
               <Grid container item xs={12} justify="space-around"  className={classes.events}>
-                {events.map((value) => (
-                    <Grid key={value.name} xs={12} md={3} item className={classes.card}>
-                        <EventCard   event={{...value}} />
+                {events.slice(0, 3).map((event) => (
+                    <Grid key={event.name} xs={12} md={3} item className={classes.card}>
+                        <SmallEvent event={{...event}} />
                     </Grid>
                 ))}
               </Grid>

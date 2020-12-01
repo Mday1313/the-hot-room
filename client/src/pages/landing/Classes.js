@@ -4,6 +4,7 @@ import ClassDescription from '../../components/layout/ClassDescription';
 import SmallHero from '../../components/layout/SmallHero';
 import { Typography } from '@material-ui/core';
 
+// ToDo: replace with database call
 const items = [
     {
         id: 1,
@@ -14,12 +15,12 @@ const items = [
     {
         id: 2,
         name: 'Hot 75 and Hot 60',
-        desc: `our express classes gives you all 26 postures and 2 breathing exercise that you love from the Hot 90 class, in express formats. designed to help you maintain your practice, these classes move at a little quicker pace, so bring your focused attention to maximize your efforts..`
+        desc: `our express classes gives you all 26 postures and 2 breathing exercise that you love from the Hot 90 class, in express formats. designed to help you maintain your practice, these classes move at a little quicker pace, so bring your focused attention to maximize your efforts.`
     },
     {
         id: 3,
         name: 'Progressive 75, warm yoga',
-        desc: `go beyond as you flow through the original hot yoga series and build foundations for a variety of postures designed to strengthen, lengthen, and tone your body. challenge yourself as you progress through salutations, hip openers, and arm balances. this class is accessible by everyBODY! the instructor practices along with the class, so it’s best to be familiar (at least 10 classes) with the 26+2 hot yoga series to make the most of the experience..`
+        desc: `go beyond as you flow through the original hot yoga series and build foundations for a variety of postures designed to strengthen, lengthen, and tone your body. challenge yourself as you progress through salutations, hip openers, and arm balances. this class is accessible by everyBODY! the instructor practices along with the class, so it’s best to be familiar (at least 10 classes) with the 26+2 hot yoga series to make the most of the experience.`
     },
     {
         id: 4,
@@ -45,8 +46,8 @@ const FullClasses = ({...props}) => {
             <SmallHero title="Classes Offered"/>
             <div className="container">
                 <Grid xs={12} align="center">
-                    <Typography variant="h4" color="primary">some hot, some not...</Typography>
-                    <Typography variant="h6" color="primary">classes designed to help you feel your absolute best!</Typography>
+                    <Typography variant="h4" component="h2" color="textPrimary">some hot, some not...</Typography>
+                    <Typography variant="h6" component="h3" color="default">classes designed to help you feel your absolute best!</Typography>
                 </Grid>
                 <Grid container item xs={12}  className="">
                 {items.map((value) => (

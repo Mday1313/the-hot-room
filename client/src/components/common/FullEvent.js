@@ -33,9 +33,9 @@ const useStyles = makeStyles((theme) => ({
     },
     topText: {
         paddingTop: theme.spacing(2),
-    
         textAlign: 'center'
     },
+  
     avatarContainer: {
         display: 'flex',
         justifyContent: 'start', 
@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
         height: theme.spacing(4),
     },
     front: {
-        height: '600px',
+        height: '500px',
         width: '400px',
         display: 'flex',
         flexDirection: 'column',
@@ -55,6 +55,7 @@ const useStyles = makeStyles((theme) => ({
         alignContent: 'center',
         position: 'relative',  
     },
+  
     back: {
         background: theme.palette.common.white,
         display: 'none'
@@ -76,7 +77,7 @@ const FullEvent = (props) => {
                 <CardContent className={classes.layer}>
                     <div className={classes.topText}>
                         <img src={logo} className={classes.logo} alt="the hot room" height="50px"/>
-                        <Typography variant="h3" align="center">{props.event.name}</Typography>
+                        <Typography variant="h3"  align="center">{props.event.name}</Typography>
                     </div>
                     <div className={classes.bottomText}>
                         <Typography variant="h6">{props.event.location}</Typography>
@@ -106,3 +107,6 @@ const FullEvent = (props) => {
 }
 
 export default FullEvent;
+
+
+

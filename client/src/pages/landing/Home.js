@@ -17,7 +17,7 @@ const Home = () => {
            <BellyBanner />
          
            <InfoCards />
-           <Reviews />
+            <Reviews />
            <Events />
            <Partners />
         </div>

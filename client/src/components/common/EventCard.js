@@ -7,61 +7,104 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import image1 from '../../resources/images/header1.jpg';
+import Avatar from '@material-ui/core/Avatar';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    // width: '100vw',
-    margin: theme.spacing(1)
+      margin: theme.spacing(8)
   },
   media: {
-    height: '200px',
-    width: '250px',
-    
+      height: '600px',
+     
   },
-  btn: {
-    display: 'flex',
-    justifyContent: 'center'
-  }
-}));
+  layer: {
+      position: 'absolute',
+      backgroundColor: theme.palette.primary.overlay,
+      color: theme.palette.common.white,
+      top: 0,
+      bottom: '45px',
+      left: 0,
+      right: 0,
+      display: 'flex',
+      justifyContent: 'space-between',
+      flexDirection: 'column'
+  },
+  topText: {
+      paddingTop: theme.spacing(2),
+      textAlign: 'center',
+      
+  },
 
-const EventCard = ({...props}) => {
+  avatarContainer: {
+      display: 'flex',
+      justifyContent: 'start', 
+      alignItems: 'center'
+  },
+  avatar: {
+      margin: '5px',
+      width: theme.spacing(3),
+      height: theme.spacing(3),
+  },
+
+  front: {
+      height: '300px',
+      width: '300px',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignContent: 'center',
+      position: 'relative',  
+  },
+  back: {
+      background: theme.palette.common.white,
+      display: 'none'
+  }
+}))
+
+const SmallEvent = (props) => {
   const classes = useStyles();
-console.log(props.event.name)
+
   return (
-    <Card className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image={image1}
-          title="Event Card"
-        />
-         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-           Event Name
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-           Date, Time
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-              Location
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-              Instructor
-          </Typography>
-          <Typography variant="h4" color="primary" component="p" align="center">
-              $0
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions className={classes.btn}>
-       
-        <Button variant="contained" size="small" color="secondary">
-          Learn More
-        </Button>
-      </CardActions>
-    </Card>
-  );
+      <div className={classes.root}>
+          <Card elevation={3} className={classes.front} >
+              <CardMedia
+                  className={classes.media}
+                  image={props.event.image}
+                  title={props.event.title}
+                  />
+             
+              <CardContent className={classes.layer}>
+                  <div className={classes.topText}>
+                      
+                      <Typography variant="h4"  align="center">{props.event.name}</Typography>
+                  </div>
+                  <div className={classes.bottomText}>
+                      <Typography variant="body1">{props.event.location}</Typography>
+                      <div className={classes.avatarContainer}>
+                          <Avatar alt={props.event.instructor} src="/src/resources/images/WS-2.jpg" className={classes.avatar} />
+                          <Typography variant="body1" >
+                      
+                      {props.event.instructor}</Typography>
+                      </div>
+                      <Typography variant="body1">{props.event.date}</Typography>
+                      <Typography variant="body1">{props.event.time}</Typography>
+                  </div>
+                
+              </CardContent>
+           
+              <CardActions>
+                  <Button size="small" color="primary">
+                  Share
+                  </Button>
+                  <Button size="small" color="primary">
+                  Learn More
+                  </Button>
+              </CardActions>
+          </Card>
+      </div>
+  )
 }
 
-export default EventCard;
+
+
+export default SmallEvent;

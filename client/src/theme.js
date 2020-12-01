@@ -12,12 +12,19 @@ let theme = createMuiTheme({
     info: {
         main: '#fff'
     },
+    textPrimary: {
+      main: '#4a4a4a'
+    },
+    textSecondary: {
+      main: '#fff'
+    },
     // Blue
     primary: {
         main: '#7498be',
         light: '#b8cddd',
         dark: '#164576',
         contrastText: '#fff',
+        textPrimary: '#4a4a4a',
         overlay: 'rgba(116, 152, 190, .6)'
     },
     // Orange
@@ -35,7 +42,7 @@ let theme = createMuiTheme({
     },
     background: {
         default: '#fff',
-        grey: 'fafafa',
+        grey: '#fafafa',
         
     },
     grey: {
@@ -62,10 +69,18 @@ let theme = createMuiTheme({
       fontFamily: '"Josefin Sans", "Roboto", "Helvetica", "Arial", sans-serif',
       h1: {
         fontFamily: '"The Girl Next Door", cursive',
+        
+      },
+      h2: {
+     
       },
       h3: {
         fontFamily: '"The Girl Next Door", cursive',
       },
+      h4: {
+        fontFamily: '"The Girl Next Door", cursive',
+      },
+
       useNextVariants: true
     
 
