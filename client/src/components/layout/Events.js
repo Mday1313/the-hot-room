@@ -2,7 +2,7 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Typography from "@material-ui/core/Typography";
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-
+import Button from '@material-ui/core/Button';
 import SmallEvent from '../../components/common/EventCard';
 import Link from '@material-ui/core/Link';
 
@@ -132,7 +132,7 @@ const Events = () => {
               </Grid>
               <Grid container item xs={12} >
                 <Grid item xs={12} className={classes.viewAll} align="center">
-                  <Typography align="center" variant="h6" component={Link} to="/events">View All Events</Typography>
+                  <Button align="center" color="secondary" variant="outlined" href="/events">View All Events</Button>
                 </Grid>
               </Grid>
            

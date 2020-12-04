@@ -22,8 +22,8 @@ const useStyles = makeStyles((theme) => ({
         paddingBottom: theme.spacing(1)
     },
     avatar: {
-        width: theme.spacing(10),
-        height: theme.spacing(10),
+        width: theme.spacing(8),
+        height: theme.spacing(8),
     },
     main: {
         paddingBottom: theme.spacing

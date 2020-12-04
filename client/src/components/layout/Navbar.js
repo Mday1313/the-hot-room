@@ -4,6 +4,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
+import Button from '@material-ui/core/Button';
 import MenuIcon from '@material-ui/icons/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import { Link } from 'react-router-dom';
@@ -73,6 +74,9 @@ export default function NavBar() {
                    <img src={logo} alt="the hot room" />
                 </Typography>
             {/* </Link>   */}
+            <Button color="secondary" variant="contained" href="/">
+                Book Now
+            </Button>
             <IconButton
                     aria-label="account of current user"
                     aria-controls="menu-appbar"
@@ -100,17 +104,21 @@ export default function NavBar() {
                   
                 >
                     
-                    <StyledMenuItem onClick={handleClose} component={Link} to='/about' >About Us </StyledMenuItem>
+                    {/* <StyledMenuItem onClick={handleClose} component={Link} to='/about' >About Us </StyledMenuItem> */}
                     
-                    <StyledMenuItem onClick={handleClose} component={Link} to='/pricing' >Pricing</StyledMenuItem>
+                   
                      
                     <StyledMenuItem onClick={handleClose} component={Link} to='/classes' >Class Descriptions</StyledMenuItem>
 
                     <StyledMenuItem onClick={handleClose} component={Link} to='/events' >Upcoming Events </StyledMenuItem>
+
+                    <StyledMenuItem onClick={handleClose} component={Link} to='/pricing' >Pricing</StyledMenuItem>
                     
-                    <StyledMenuItem onClick={handleClose} component={Link} to='/econtact-us' >Contact Us</StyledMenuItem>
+                    <StyledMenuItem onClick={handleClose} component={Link} to='/contact-us' >Contact Us</StyledMenuItem>
 
                      <StyledMenuItem onClick={handleClose} component={Link} to='/register' >Member Registration</StyledMenuItem>
+
+                    
                      
                      {!auth && (
                          <div>
