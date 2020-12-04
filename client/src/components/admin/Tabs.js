@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import ProfileForm from '../admin/ProfileForm';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -18,8 +18,8 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box p={3}>
-          <Typography>{children}</Typography>
+        <Box>
+          <div>{children}</div>
         </Box>
       )}
     </div>
@@ -55,6 +55,10 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(4),
     paddingTop: theme.spacing(4),
     verticalAlign: 'middle'
+  },
+  tabPanel: {
+    width: '100%',
+    padding: theme.spacing(3)
   }
 }));
 
@@ -76,35 +80,24 @@ export default function VerticalTabs() {
         aria-label="Vertical tabs example"
         className={classes.tabs}
       >
-        <Tab className={classes.tab} label="Profile" {...a11yProps(0)} />
-        <Tab className={classes.tab} label="Saved Media" {...a11yProps(1)} />
-        <Tab className={classes.tab} label="Admin Panel" {...a11yProps(2)} />
-        {/* <Tab label="Item Four" {...a11yProps(3)} />
-        <Tab label="Item Five" {...a11yProps(4)} />
-        <Tab label="Item Six" {...a11yProps(5)} />
-        <Tab label="Item Seven" {...a11yProps(6)} /> */}
+        <Tab className={classes.tab} label="My Profile" {...a11yProps(0)} />
+        <Tab className={classes.tab} label="Members" {...a11yProps(1)} />
+        <Tab className={classes.tab} label="Media" {...a11yProps(2)} />
+        <Tab className={classes.tab} label="Admin Panel" {...a11yProps(3)} />
       </Tabs>
-      <TabPanel value={value} index={0}>
-        Profile form
+      <TabPanel className={classes.tabPanel} value={value} index={0}>
+        <ProfileForm />
       </TabPanel>
-      <TabPanel value={value} index={1}>
-        Saved Media List
+      <TabPanel className={classes.tabPanel} value={value} index={1}>
+        Member List
       </TabPanel>
-      <TabPanel value={value} index={2}>
-        Item Three
+      <TabPanel className={classes.tabPanel} value={value} index={2}>
+        Media List
       </TabPanel>
-      <TabPanel value={value} index={3}>
-        Item Four
+      <TabPanel className={classes.tabPanel} value={value} index={3}>
+        Admin Panel (auth only)
       </TabPanel>
-      <TabPanel value={value} index={4}>
-        Item Five
-      </TabPanel>
-      <TabPanel value={value} index={5}>
-        Item Six
-      </TabPanel>
-      <TabPanel value={value} index={6}>
-        Item Seven
-      </TabPanel>
+      
     </div>
   );
 }

@@ -15,7 +15,7 @@ const Dashboard = ({ children }) => {
     const classes = useStyles();
 
     return(
-        <div>
+        <div className="container">
             <Container align="center" className={classes.containerBox}>
                 <DashHeader />
                 <Tabs />

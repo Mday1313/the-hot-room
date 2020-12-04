@@ -1,16 +1,16 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import logo from '../../resources/images/logo_flame.png'
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        minHeight: '400px',
+        minHeight: '200px',
         width: '90%',
         display: 'flex',
         justifyContent: 'center',
         alignContent: 'center',
+        padding: theme.spacing(2),
         marginBottom: theme.spacing(4),
         marginTop: theme.spacing(3),
         color: theme.palette.common.grey,
@@ -24,7 +24,8 @@ const useStyles = makeStyles((theme) => ({
       justifyContent: 'center',
       alignContent: 'center',
       flexDirection: 'column',
-      padding: theme.spacing(2)
+      padding: theme.spacing(2),
+      margin: 'auto'
     },
     classTitle: {
         paddingTop: theme.spacing(2),

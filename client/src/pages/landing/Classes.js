@@ -45,14 +45,14 @@ const FullClasses = ({...props}) => {
         <>
             <SmallHero title="Classes Offered"/>
             <div className="container">
-                <Grid xs={12} align="center">
+                <Grid item xs={12} align="center">
                     <Typography variant="h4" component="h2" color="textPrimary">some hot, some not...</Typography>
-                    <Typography variant="h6" component="h3" color="default">classes designed to help you feel your absolute best!</Typography>
+                    <Typography variant="h6" component="h3" color="inherit">classes designed to help you feel your absolute best!</Typography>
                 </Grid>
-                <Grid container item xs={12}  className="">
+                <Grid container item xs={12} align="center" className="">
                 {items.map((value) => (
-                     <Grid item xs={12} md={4}>
-                        <ClassDescription key={value.id}  item={{...value}} />
+                     <Grid item xs={12}  key={value.id}>
+                        <ClassDescription item={{...value}} />
                     </Grid>
                 ))}
               </Grid>
