@@ -76,7 +76,7 @@ export default function Login() {
           Sign In
         </Typography>
         <form className={classes.form} noValidate onSubmit={e => onSubmit(e)}>
-          <Grid container spacing={2}>
+          <Grid container >
             <Grid item xs={12}>
               <TextField
                 variant="outlined"

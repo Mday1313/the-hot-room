@@ -19,6 +19,28 @@
     margin-bottom: 20px;
    } 
 
+   .course-nav li {
+    display: inline-block;
+    padding: 5px;
+  }
+  .course-nav li + li {
+    margin-left: .6em;
+  }
+  .course-nav a {
+    font-size: .85em;
+    color: #164576;
+    padding: .5em .8em;
+    text-decoration: none;
+    border-radius: .25em;
+    background: #eaebeb;
+    transition: .2s;
+  }
+  .course-nav a:hover,
+  .course-nav a.active {
+    color: #fff;
+    background: #7498be;
+  }
+
   /* .alert {
     padding: 0.8rem;
     margin: 1rem 0;

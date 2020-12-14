@@ -6,7 +6,7 @@ import DashHeader from '../../components/admin/Header'
 
 const useStyles = makeStyles((theme) => ({
     containerBox: {
-        height: '60vh',
+        minHeight: '60vh',
         padding: theme.spacing(4)
     }
 }))

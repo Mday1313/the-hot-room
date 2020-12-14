@@ -5,6 +5,8 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
 import ProfileForm from '../admin/ProfileForm';
+import MemberList from '../admin/MemberList';
+import VideoList from '../admin/VideoList';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -45,11 +47,13 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     display: 'flex',
     // height: 224,
-    paddingBottom: theme.spacing(4)
+    // paddingBottom: theme.spacing(4),
+    padding: theme.spacing(2)
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
-    paddingBottom: theme.spacing(8)
+    paddingBottom: theme.spacing(8),
+    
   },
   tab: {
     paddingBottom: theme.spacing(4),
@@ -89,10 +93,10 @@ export default function VerticalTabs() {
         <ProfileForm />
       </TabPanel>
       <TabPanel className={classes.tabPanel} value={value} index={1}>
-        Member List
+        <MemberList />
       </TabPanel>
       <TabPanel className={classes.tabPanel} value={value} index={2}>
-        Media List
+        <VideoList />
       </TabPanel>
       <TabPanel className={classes.tabPanel} value={value} index={3}>
         Admin Panel (auth only)
