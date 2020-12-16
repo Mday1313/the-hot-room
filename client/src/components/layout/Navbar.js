@@ -104,10 +104,8 @@ export default function NavBar() {
                   
                 >
                     
-                    {/* <StyledMenuItem onClick={handleClose} component={Link} to='/about' >About Us </StyledMenuItem> */}
+                    <StyledMenuItem onClick={handleClose} component={Link} to='/team' >Meet the Team </StyledMenuItem>
                     
-                   
-                     
                     <StyledMenuItem onClick={handleClose} component={Link} to='/classes' >Class Descriptions</StyledMenuItem>
 
                     <StyledMenuItem onClick={handleClose} component={Link} to='/events' >Upcoming Events </StyledMenuItem>
@@ -125,8 +123,7 @@ export default function NavBar() {
                             <StyledMenuItem onClick={handleClose} component={Link} to='/login' >Log in</StyledMenuItem>
                          </div>
                      )}
-                    
-
+                
 
                     {auth && (
                         <div>
