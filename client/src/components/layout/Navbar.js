@@ -18,14 +18,15 @@ import logo from '../../resources/images/logos/logo_blk.png';
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
-      
+     
     },
     nav: {
-        // backgroundColor: theme.palette.common.white,
+        backgroundColor: 'transparent',
         // color: theme.palette.primary.main
     },
     menuButton: {
         marginRight: theme.spacing(2),
+        color: theme.palette.primary.main
     },
     title: {
         flexGrow: 1,
@@ -68,21 +69,17 @@ export default function NavBar() {
        
         <AppBar position="static" className={classes.nav}>
             <Toolbar>
-                {/* replace with logo */}
-            {/* <Link to='/'>  */}
-                <Typography variant="h6" component={Link} to="/" className={classes.title}>
+           
+                <Typography variant="h6" component={Link} to="/" align="center" className={classes.title}>
                    <img src={logo} alt="the hot room" />
                 </Typography>
-            {/* </Link>   */}
-            <Button color="secondary" variant="contained" href="/">
-                Book Now
-            </Button>
+          
             <IconButton
                     aria-label="account of current user"
                     aria-controls="menu-appbar"
                     aria-haspopup="true"
                     onClick={handleMenu}
-                    color="inherit"
+                    color="primary"
                 >
                 <MenuIcon />
             </IconButton>

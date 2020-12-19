@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
     },
     container: {
       maxWidth: '1000px',
+      padding: theme.spacing(6)
     },
     header: {
       paddingTop: theme.spacing(8),
@@ -63,7 +64,6 @@ const useStyles = makeStyles((theme) => ({
     },
     text: {
         color: theme.palette.secondary.dark
-
     }
   }));
 
@@ -79,7 +79,6 @@ const InfoCards = ({  }) => {
                     why join the hot room yoga & wellness
                 </Typography>
               </Grid>
-              
             </Grid>
           
             <Grid container item xs={12} justify="space-around" spacing={2}>

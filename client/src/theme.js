@@ -43,7 +43,7 @@ let theme = createMuiTheme({
     background: {
         default: '#fff',
         grey: '#fafafa',
-        
+        overlay: 'rgba(0,0,0, .5)'
     },
     grey: {
       '50': '#fafafa',

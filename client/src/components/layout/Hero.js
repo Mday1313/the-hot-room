@@ -1,30 +1,35 @@
 import React from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import MobileStepper from '@material-ui/core/MobileStepper';
 import image1 from '../../resources/images/header1.jpg';
 import image2 from '../../resources/images/header2.jpg';
 import image3 from '../../resources/images/header3.jpg';
 import SwipeableViews from 'react-swipeable-views';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 import { autoPlay } from 'react-swipeable-views-utils';
+import Nav from '../layout/Nav';
+
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 // TODO: Add alt content for studio images
 const tutorialSteps = [
   {
+    id: 1,
     label: '1',
     imgPath: image1,
   },
 
   {
+    id: 2,
     label: '2',
     imgPath:
       image2,
   },
  
   {
+    id: 3,
     label: '3',
-    imgPath:
-      image3,
+    imgPath: image3,
   },
 ];
 
@@ -32,8 +37,14 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
     flexGrow: 1,
-    margin: '0 auto'
+    margin: '0 auto',
+    
   },
+  // overlay: {
+  //   height: '100vh',
+  //   background: theme.palette.background.overlay,
+  //   zIndex: 10
+  // },
   controls: {
     position: 'relative',
     bottom: 35,
@@ -48,6 +59,24 @@ const useStyles = makeStyles((theme) => ({
     overflow: 'hidden',
     width: '100%',
   },
+  label: {
+    position: 'absolute',
+    top: '20%',
+    left: '10%',
+    background: theme.palette.background.overlay,
+    color: theme.palette.primary.contrastText,
+    padding: theme.spacing(4),
+    maxWidth: '30%',
+    zIndex: 100,
+    borderRadius: '50px',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignContent: 'center'
+  },
+  btn: {
+    margin: 'auto'
+  }
 }));
 
 function SwipeableTextMobileStepper() {
@@ -62,6 +91,11 @@ function SwipeableTextMobileStepper() {
 
   return (
     <div className={classes.root}>
+      <Nav />
+      <div className={classes.label}>
+      <Typography variant="h2" component="h1" align="center" >welcome to your yoga & fitness destination</Typography>
+      <Button className={classes.btn} color="secondary" variant="contained" href="/">Book Now</Button>
+      </div>
       
       <AutoPlaySwipeableViews
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
@@ -70,9 +104,11 @@ function SwipeableTextMobileStepper() {
         enableMouseEvents
         interval={5000}
       >
-        
+       
         {tutorialSteps.map((step, index) => (
-          <div key={step.label}>
+         
+          <div key={step.id}>
+            
             {Math.abs(activeStep - index) <= 2 ? (
                
               <img className={classes.img} src={step.imgPath} alt={step.label} />
@@ -80,7 +116,7 @@ function SwipeableTextMobileStepper() {
           </div>
         ))}
       </AutoPlaySwipeableViews>
-   
+      
     </div>
   );
 }

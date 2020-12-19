@@ -77,7 +77,7 @@ const Events = () => {
 
             <Grid container item  xs={12} >
                 {events.map((event) => (
-                    <Grid item xs={12} lg={4} key={event.id}>
+                    <Grid item xs={12} md={6} lg={4}  key={event.id}>
                         <FullEvent event={event}/>
                     </Grid>
                     

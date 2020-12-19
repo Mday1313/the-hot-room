@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     },
     container: {
       maxWidth: '1300px',
-      padding: theme.spacing(3),
+      padding: theme.spacing(6),
       
     },
     contentBox: {
@@ -66,7 +66,7 @@ const StudioInfo = () => {
           <Grid container className={classes.container} >
               <Grid container item className={classes.header}>
                 <Grid item xs={12} >
-                  <Typography align="center" variant="h3">welcome to your yoga & fitness destination</Typography>
+                  <Typography align="center" variant="h3">we want you to feel right at home</Typography>
                 </Grid>
               </Grid>
               <Grid container item xs={12} md={5} justify="space-around"  className={classes.contentBox}>
@@ -78,9 +78,9 @@ const StudioInfo = () => {
                 </Grid>
               </Grid>
               <Grid container item xs={12} md={7} justify="space-around"  className={classes.contentBox}>
-                <Grid item xs={12} className={classes.title}>
+                {/* <Grid item xs={12} className={classes.title}>
                   <Typography align="center" color="secondary" variant="h5">we want you to feel right at home</Typography>
-                </Grid>
+                </Grid> */}
                 <Grid item xs={12} className={classes.body}>
                   <Typography align="left" variant="body1">experience why folks say we have the most amazing community at the hot room! enjoy a delicious draft booch kombucha after class and connect with your fellow yogis in a relaxed and welcoming environment.</Typography>
                 </Grid>

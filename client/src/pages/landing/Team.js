@@ -55,7 +55,7 @@ const instructors = [
 
 const useStyles = makeStyles((theme) => ({
     root: {
-      
+      background: theme.palette.background.default
     },
     team: {
         padding: theme.spacing(1),
@@ -85,7 +85,7 @@ const Team = () => {
             </Grid>
             <Grid container item  xs={12} className={classes.individuals}>
                 {instructors.map((instructor) => (
-                    <Grid item xs={12} lg={3} key={instructor.id} align="center" className={classes.individual}>
+                    <Grid item xs={12} sm={6} md={4} lg={3} key={instructor.id} align="center" className={classes.individual}>
                         <img src={instructor.image} alt={instructor.name} height="400px"/>
                 <div className="team-overlay">{instructor.name}</div>
                     </Grid>
@@ -93,7 +93,6 @@ const Team = () => {
                 ))}
             </Grid>
            
-
         </div>
     )
 }

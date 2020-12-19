@@ -7,6 +7,7 @@ import Footer from './components/layout/Footer'
 import Home from './pages/landing/Home';
 import Events from './pages/landing/Events';
 import Team from './pages/landing/Team';
+import Pricing from './pages/landing/Pricing';
 import FullClasses from './pages/landing/Classes';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
@@ -22,7 +23,7 @@ const App = () =>
   <Provider store={store}>
     <Router>
       <Fragment>
-        <Navbar />
+        {/* <Navbar /> */}
         <Route exact path="/" component={ Home } />
         <section className="mainContainer">
           <Alert />
@@ -30,6 +31,7 @@ const App = () =>
             <Route exact path="/classes" component={ FullClasses } />
             <Route exact path="/events" component={ Events } />
             <Route exact path="/team" component={ Team } />
+            <Route exact path="/pricing" component={ Pricing } />
             <Route exact path="/register" component={ Register } />
             <Route exact path="/login" component={ Login } />
             <Route exact path="/dashboard" component={ Dashboard } />
