@@ -91,7 +91,7 @@ const MemberList = () => {
     const classes = useStyles();
 
     return (
-        <Grid container className={classes.root}>
+        <Grid container className={classes.root} >
             <Grid container item xs={12} justify="space-between">
                 <Grid item xs={6}>
                     <Typography variant="h3" align="left" component="h1">Members</Typography>

@@ -53,15 +53,16 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center'
   },
   img: {
-    height: '80%',
+    height: '90vh',
     display: 'block',
     maxWidth: '100vw',
     overflow: 'hidden',
-    width: '100%',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat'
   },
   label: {
     position: 'absolute',
-    top: '20%',
+    top: '25%',
     left: '10%',
     background: theme.palette.background.overlay,
     color: theme.palette.primary.contrastText,
@@ -111,7 +112,7 @@ function SwipeableTextMobileStepper() {
             
             {Math.abs(activeStep - index) <= 2 ? (
                
-              <img className={classes.img} src={step.imgPath} alt={step.label} />
+              <div className={classes.img} style={{backgroundImage: `linear-gradient(rgba(0,0,0, .5),rgba(0,0,0, .5)), url(${step.imgPath})`}}> </div>
             ) : null}
           </div>
         ))}

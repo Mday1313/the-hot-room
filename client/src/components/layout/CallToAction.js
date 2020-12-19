@@ -7,7 +7,8 @@ import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles((theme) => ({
     container: {
-        backgroundColor: theme.palette.secondary.light,
+        backgroundColor: theme.palette.primary.main,
+
         minHeight: '100px',
         display: 'flex',
         alignItems: 'center',
@@ -21,8 +22,7 @@ const useStyles = makeStyles((theme) => ({
        flexWrap: 'wrap'
     },
     text: {
-        color: theme.palette.secondary.main
-
+        color: theme.palette.primary.contrastText
     },
 }));
 

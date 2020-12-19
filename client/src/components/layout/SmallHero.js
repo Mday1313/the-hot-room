@@ -2,19 +2,22 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
+import Navbar from '../layout/Navbar';
 
 const useStyles = makeStyles((theme) => ({
     root: {
         width: '100vw',
-        background: theme.palette.primary.light,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center center',
         margin: '0 auto',
-        maxHeight: '300px',
+        minHeight: '300px',
         marginBottom: theme.spacing(6),
         boxShadow: ' 0 5px 5px #ccc'  
     },
     header: {
         display: 'flex',
         justifyContent: 'center',
+        alignContent: 'flex-end',
         padding: theme.spacing(6),
         color: theme.palette.common.white,
         fontWeight: '500'
@@ -29,10 +32,13 @@ const useStyles = makeStyles((theme) => ({
       const classes = useStyles();
      
     return (
-        <div className={classes.root}>
-            <Typography variant="h1" align="center" className={classes.header}>{props.title}</Typography>
+        <>
+        <Navbar />
+        <div className={classes.root} style={{backgroundImage: `linear-gradient(rgba(0,0,0, .5),rgba(0,0,0, .5)), url(${props.img})`}}>
+            <Typography variant="h1" className={classes.header}>{props.title}</Typography>
            
         </div>
+        </>
     )
   }
 

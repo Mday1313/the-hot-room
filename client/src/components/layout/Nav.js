@@ -19,10 +19,9 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 const useStyles = makeStyles((theme) => ({
     root: {
         width: '100vw',
-        height: '675px',
-        position: 'fixed',
+        position: 'absolute',
         zIndex: 100,
-        background: theme.palette.background.overlay,
+        // background: theme.palette.background.overlay,
        
     },
     container: {
@@ -33,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     },
     phone: {
         width: '300px',
-        color: theme.palette.primary.contrastText
+        color: theme.palette.secondary.main
     },
     label: {
         paddingRight: theme.spacing(3),
@@ -91,6 +90,7 @@ export default function NavBar() {
     const [auth, setAuth] = React.useState(true);
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
+   
 
     // const handleChange = (event) => {
     //     setAuth(event.target.checked);
@@ -104,10 +104,14 @@ export default function NavBar() {
         setAnchorEl(null);
     };
 
+    const handleScroll = (e) => {
+        console.log('hello')
+    }
+
     return (
-        <div className={classes.root}>
+        <div className={classes.root} >
        
-            <div className={classes.container}>
+            <div className={classes.container} >
                 <Typography variant="body1" spacing={3} className={classes.phone}>
                     <CallIcon />
                     Call us: 615-457-3075
@@ -122,7 +126,8 @@ export default function NavBar() {
                         <Typography variant="h6" component={Link} to="/team" align="center"className={classes.menuItem} >Team</Typography>
                         <Typography variant="h6" component={Link} to="/classes" align="center"className={classes.menuItem} >Classes</Typography>
                         <Typography variant="h6" component={Link} to="/events" align="center"className={classes.menuItem} >Events</Typography>
-                        <Typography variant="h6" component={Link} to="/team" align="center"className={classes.menuItem} >Team</Typography>
+                        <Typography variant="h6" component={Link} to="/pricing" align="center"className={classes.menuItem} >Prices</Typography>
+                        <Button variant="contained" color="secondary">Book Now</Button>
                     </div>
                 </div>
                 <div className={classes.socials}>

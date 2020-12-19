@@ -1,5 +1,6 @@
 import React from 'react';
 import SmallHero from '../../components/layout/SmallHero';
+import headImg from '../../resources/images/teamHero.jpg';
 import img from '../../resources/images/HR_16.jpg';
 import team1 from '../../resources/images/WS-2.jpg';
 import team2 from '../../resources/images/HR-109.jpg';
@@ -79,7 +80,7 @@ const Team = () => {
     
     return (
         <div className={classes.root}>
-            <SmallHero img={img} alt="Team Hero" title="Meet the Team"/>
+            <SmallHero img={headImg} alt="Team Hero" title="Meet the Team"/>
             <Grid container item xs={12} className={classes.team}>
                 <img src={img} alt="team photo" width="700px"/>
             </Grid>

@@ -2,7 +2,7 @@
 import React, { Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import Navbar from './components/layout/Navbar';
+import Nav from './components/layout/Nav';
 import Footer from './components/layout/Footer'
 import Home from './pages/landing/Home';
 import Events from './pages/landing/Events';
@@ -23,7 +23,7 @@ const App = () =>
   <Provider store={store}>
     <Router>
       <Fragment>
-        {/* <Navbar /> */}
+        {/* <Nav /> */}
         <Route exact path="/" component={ Home } />
         <section className="mainContainer">
           <Alert />
