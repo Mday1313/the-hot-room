@@ -92,7 +92,7 @@ function SwipeableTextMobileStepper() {
 
   return (
     <div className={classes.root}>
-      <Nav />
+      {/* <Nav /> */}
       <div className={classes.label}>
       <Typography variant="h2" component="h1" align="center" >welcome to your yoga & fitness destination</Typography>
       <Button className={classes.btn} color="secondary" variant="contained" href="/">Book Now</Button>

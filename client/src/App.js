@@ -1,7 +1,7 @@
 
 import React, { Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
+import Header from './components/layout/Header'
 import Nav from './components/layout/Nav';
 import Footer from './components/layout/Footer'
 import Home from './pages/landing/Home';
@@ -24,6 +24,7 @@ const App = () =>
     <Router>
       <Fragment>
         {/* <Nav /> */}
+        <Header />
         <Route exact path="/" component={ Home } />
         <section className="mainContainer">
           <Alert />

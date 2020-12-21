@@ -1,8 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
-import Navbar from '../layout/Navbar';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -19,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
         alignContent: 'flex-end',
         padding: theme.spacing(6),
-        color: theme.palette.common.white,
+        color: theme.palette.primary.main,
         fontWeight: '500'
     },
     img: {
@@ -33,11 +31,12 @@ const useStyles = makeStyles((theme) => ({
      
     return (
         <>
-        <Navbar />
+        
         <div className={classes.root} style={{backgroundImage: `linear-gradient(rgba(0,0,0, .5),rgba(0,0,0, .5)), url(${props.img})`}}>
-            <Typography variant="h1" className={classes.header}>{props.title}</Typography>
+        
            
         </div>
+        <Typography variant="h1" className={classes.header}>{props.title}</Typography>
         </>
     )
   }

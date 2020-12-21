@@ -1,6 +1,7 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import ClassDescription from '../../components/layout/ClassDescription';
+import img from '../../resources/images/teamHero.jpg';
 import SmallHero from '../../components/layout/SmallHero';
 import { Typography } from '@material-ui/core';
 
@@ -43,7 +44,7 @@ const FullClasses = ({...props}) => {
 
     return (
         <>
-            <SmallHero title="Classes Offered"/>
+            <SmallHero title="Classes Offered" img={img}/>
             <div className="container">
                 <Grid item xs={12} align="center">
                     <Typography variant="h4" component="h2" color="textPrimary">some hot, some not...</Typography>

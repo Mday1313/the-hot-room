@@ -42,6 +42,11 @@
     background: #7498be;
   }
 
+  .menuLinks {
+    padding-right: '20px';
+    padding-left: '20px';
+    text-decoration: 'none';
+  }
   /* .alert {
     padding: 0.8rem;
     margin: 1rem 0;
