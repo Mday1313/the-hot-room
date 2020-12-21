@@ -1,6 +1,6 @@
 import React from 'react';
 import SmallHero from '../../components/layout/SmallHero';
-import img from '../../resources/images/eventsHero.jpg';
+import img from '../../resources/images/teamHero.jpg';
 import FullEvent from '../../components/common/FullEvent';
 import Grid from '@material-ui/core/Grid';
 

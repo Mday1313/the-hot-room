@@ -7,7 +7,6 @@ import SwipeableViews from 'react-swipeable-views';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import { autoPlay } from 'react-swipeable-views-utils';
-import Nav from '../layout/Nav';
 
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
@@ -92,7 +91,6 @@ function SwipeableTextMobileStepper() {
 
   return (
     <div className={classes.root}>
-      {/* <Nav /> */}
       <div className={classes.label}>
       <Typography variant="h2" component="h1" align="center" >welcome to your yoga & fitness destination</Typography>
       <Button className={classes.btn} color="secondary" variant="contained" href="/">Book Now</Button>

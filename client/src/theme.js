@@ -65,7 +65,7 @@ let theme = createMuiTheme({
  
   typography: {
 
- 
+
       fontFamily: '"Josefin Sans", "Roboto", "Helvetica", "Arial", sans-serif',
       h1: {
         fontFamily: '"The Girl Next Door", cursive',
@@ -79,6 +79,10 @@ let theme = createMuiTheme({
       },
       h4: {
         fontFamily: '"The Girl Next Door", cursive',
+      },
+      h6: {
+        color: '#4a4a4a',
+        fontWeight: '300'
       },
 
       useNextVariants: true

@@ -6,7 +6,6 @@ const useStyles = makeStyles((theme) => ({
     root: {
         width: '100vw',
         backgroundSize: 'cover',
-        backgroundPosition: 'center center',
         margin: '0 auto',
         minHeight: '300px',
         marginBottom: theme.spacing(6),
@@ -32,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     return (
         <>
         
-        <div className={classes.root} style={{backgroundImage: `linear-gradient(rgba(0,0,0, .5),rgba(0,0,0, .5)), url(${props.img})`}}>
+        <div className={classes.root} style={{backgroundImage: `linear-gradient(rgba(0,0,0, .5),rgba(0,0,0, .5)), url(${props.img})`,  backgroundPosition: `center ${props.position ?? 'center'}`,}}>
         
            
         </div>

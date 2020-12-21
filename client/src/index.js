@@ -8,8 +8,9 @@ import theme from './theme'
 
 ReactDOM.render(
   <>
-    <CssBaseline />
+   
     <ThemeProvider theme={theme}>
+      <CssBaseline />
       <App />
     </ThemeProvider>
   </>,

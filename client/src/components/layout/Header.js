@@ -50,7 +50,7 @@ class Header extends Component {
            <AppBar
             position="fixed"
             style={{
-                backgroundColor: this.state.headerShow ? "#2f2f2f" : "transparent",
+                backgroundColor: this.state.headerShow ? "#424242" : "transparent",
                 boxShadow: "none",
                 padding: "10px 0px",
            
@@ -65,15 +65,13 @@ class Header extends Component {
                  width: '100vw'
 
             }} >
-                <Typography variant="body1" spacing={3} color="secondary" style={{
-                     width: '350px',
-                }}>
+                <Typography variant="body1" spacing={3} color="secondary" >
                     <CallIcon />
                     Call us: 615-457-3075
                 </Typography>
                 <div style={{
-                    paddingRight: '30px',
-                    paddingLeft: '30px',
+                    paddingRight: '60px',
+                    paddingLeft: '60px',
                     textAlign: 'center',
                     display: this.state.headerShow ? "flex" : "block",
                 }}>
@@ -103,16 +101,16 @@ class Header extends Component {
                     </div>
                 </div>
                 <div style={{
-                     width: '300px',
+                    //  width: '300px',
                      textAlign: 'right',
                      color: '#fff'
                 }}>
                     <IconButton href="https://www.facebook.com/TheHotRoomTN/" color="inherit">
-                        <FacebookIcon fontSize="medium"   />
+                        <FacebookIcon fontSize="large"   />
                     </IconButton>
                     
                     <IconButton href="https://www.instagram.com/thehotroomtn/" color="inherit">
-                        <InstagramIcon fontSize="medium"   />
+                        <InstagramIcon fontSize="large"   />
                     </IconButton>
 
                 </div>
