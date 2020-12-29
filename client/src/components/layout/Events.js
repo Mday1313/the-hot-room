@@ -16,7 +16,9 @@ const events = [
     date: 'Month, 11, year',
     time: '3pm',
     url: '',
-    image: 'https://theknow.denverpost.com/wp-content/uploads/2020/04/GettyImages-1152829238.jpg'
+    image: 'https://theknow.denverpost.com/wp-content/uploads/2020/04/GettyImages-1152829238.jpg',
+    description: ' Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et debitis architecto, accusantium aut minus quod unde amet animi dolorem, provident praesentium modi. Reiciendis ea veritatis sequi blanditiis natus itaque cupiditate?'
+   
 },
 {
     id: 2,

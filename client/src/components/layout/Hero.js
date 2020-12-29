@@ -16,19 +16,21 @@ const tutorialSteps = [
     id: 1,
     label: '1',
     imgPath: image1,
+    position: 'bottom'
   },
 
   {
     id: 2,
     label: '2',
-    imgPath:
-      image2,
+    imgPath: image2,
+    position: 'top'
   },
  
   {
     id: 3,
     label: '3',
     imgPath: image3,
+    position: 'top'
   },
 ];
 
@@ -93,7 +95,7 @@ function SwipeableTextMobileStepper() {
     <div className={classes.root}>
       <div className={classes.label}>
       <Typography variant="h2" component="h1" align="center" >welcome to your yoga & fitness destination</Typography>
-      <Button className={classes.btn} color="secondary" variant="contained" href="/">Book Now</Button>
+      <Button className={classes.btn} color="secondary" variant="contained" href="https://clients.mindbodyonline.com/classic/ws?studioid=5398&stype=-98">Book Now</Button>
       </div>
       
       <AutoPlaySwipeableViews
@@ -110,7 +112,7 @@ function SwipeableTextMobileStepper() {
             
             {Math.abs(activeStep - index) <= 2 ? (
                
-              <div className={classes.img} style={{backgroundImage: `linear-gradient(rgba(0,0,0, .5),rgba(0,0,0, .5)), url(${step.imgPath})`}}> </div>
+              <div className={classes.img} style={{backgroundImage: `linear-gradient(rgba(0,0,0, .5),rgba(0,0,0, .5)), url(${step.imgPath})`,  backgroundPosition: `center ${step.position ?? 'center'}`}}> </div>
             ) : null}
           </div>
         ))}

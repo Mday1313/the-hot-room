@@ -9,14 +9,15 @@ const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
         flexWrap: 'wrap',
-        borderRadius: 'unset'
       },
       margin: {
         margin: theme.spacing(1),
-        backgroundColor: theme.palette.common.white
+        backgroundColor: theme.palette.common.white,
+       
       },
       input: {
-        color: theme.palette.primary
+        color: theme.palette.primary,  
+        
       },
       withoutLabel: {
         marginTop: theme.spacing(3),

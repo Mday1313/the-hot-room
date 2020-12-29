@@ -31,9 +31,12 @@ const useStyles = makeStyles((theme) => ({
     },
     topText: {
         paddingTop: theme.spacing(2),
-        textAlign: 'center'
+        textAlign: 'center',
+        color: theme.palette.common.white,
     },
-  
+    bottomText: {
+        color: theme.palette.common.white,
+    },
     avatarContainer: {
         display: 'flex',
         justifyContent: 'start', 
@@ -75,10 +78,10 @@ const FullEvent = (props) => {
                 <CardContent className={classes.layer}>
                     <div className={classes.topText}>
                         <img src={logo} className={classes.logo} alt="the hot room" height="50px"/>
-                        <Typography variant="h3"  align="center">{props.event.name}</Typography>
+                        <Typography variant="h3"  align="center" >{props.event.name}</Typography>
                     </div>
                     <div className={classes.bottomText}>
-                        <Typography variant="h6">{props.event.location}</Typography>
+                        <Typography variant="h6" >{props.event.location}</Typography>
                         <div className={classes.avatarContainer}>
                             <Avatar alt={props.event.instructor} src="/src/resources/images/WS-2.jpg" className={classes.avatar} />
                             <Typography variant="h6" >
@@ -92,9 +95,9 @@ const FullEvent = (props) => {
                 </CardContent>
              
                 <CardActions>
-                    <Button size="small" color="primary">
+                    {/* <Button size="small" color="primary">
                     Share
-                    </Button>
+                    </Button> */}
                     <Button size="small" color="primary">
                     Learn More
                     </Button>

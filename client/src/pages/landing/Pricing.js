@@ -5,7 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import img from '../../resources/images/yogaPortrait.jpg';
-import blob from '../../resources/images/blob.svg';
+
 import headImg from '../../resources/images/HR-23.jpg';
 import { url } from 'gravatar';
 import Etiquette from '../../components/layout/Etiquette';
@@ -21,6 +21,10 @@ const useStyles = makeStyles((theme) => ({
         overflow: 'hidden',
         marginBottom: '40px'
     }, 
+    pricing: {
+        marginTop: theme.spacing(6),
+        marginBottom: theme.spacing(6)
+    },
     morePricing: {
         width: '100vw',
         background: theme.palette.secondary.light
@@ -34,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         flexDirection: 'column',
         alignContent: 'center',
-        justifyContent: 'center'
+        justifyContent: 'space-evenly'
     },
     text:{
         paddingBottom: theme.spacing(2),
@@ -58,23 +62,28 @@ const Pricing = () => {
     
     return (
         <div className={classes.root}>
-            <SmallHero  alt="" title="Pricing & Etiquette" img={headImg} position="75%"/>
+            <SmallHero  alt="yoga image" img={headImg} position="75%"/>
             <Grid container className={classes.section} >
                 <Grid container item xs={12} className={classes.pricing}>
+                    <Grid item xs={12}>
+                        <Typography variant="h2" className={classes.title} align="center" color="primary">
+                                Prices
+                        </Typography>
+                    </Grid>
                     <Grid item xs={12} md={6} className={classes.textContainer}>
-  
+                        <Typography className={classes.sectionTitle} variant="h3" align="center" gutterBottom>Ready to join?</Typography>
                         <Typography className={classes.text} variant="h6" align="center">
-                        whether you are looking for an unlimited yoga membership, or just a weekly maintenance package, we have an option for you. with packages ranging from $69 to $159 month, our membership options are designed with your lifestyle in mind. we take an individualized approach to meet your goals, and your budget. 
+                        Whether you are looking for an unlimited yoga membership, or just a weekly maintenance package, we have an option for you. With packages ranging from $69 to $159 month, our membership options are designed with your lifestyle in mind. we take an individualized approach to meet your goals, and your budget. 
                         </Typography>
                         <Typography className={classes.text} variant="h6" align="center">
-                        schedule a consultation with us to make sure you get exactly what you need.
+                        Schedule a consultation with us to make sure you get exactly what you need.
                         </Typography>
                         <Button className={classes.btn} href="https://clients.mindbodyonline.com/classic/ws?studioid=5398&stype=41&sTG=22" color="secondary" variant="contained">
                             Memberships
                         </Button>
                     </Grid>
                     <Grid className={classes.imgContainer} item xs={12} md={6} align="center">
-                    <img src={img} alt="yoga protrait" height="600px"/>
+                    <img src={img} alt="yoga protrait" height="500px"/>
                     </Grid>
                 </Grid>
                 <Grid container item  xs={12} className={classes.morePricing}>
@@ -124,11 +133,11 @@ const Pricing = () => {
                           Private Sessions
                       </Typography>
                       <Typography variant="h6" align="center" className={classes.private}>
-                      our private sessions provide the opportunity to receive individualized attention to get you started on your yoga journey. we begin your series at a lower temperature, and gradually increase the heat each session. private lessons are perfect for beginners and seasoned yogis. prices start at $160 per session.
+                      Our private sessions provide the opportunity to receive individualized attention to get you started on your yoga journey. We begin your series at a lower temperature, and gradually increase the heat each session. private lessons are perfect for beginners and seasoned yogis. Prices start at $160 per session.
                       </Typography>
-                      <Typography variant="body1" color="primary" align="center" className={classes.private}>* mats, towels, water, and retail available to purchase or rent in studio</Typography>
+                      <Typography variant="body1" color="primary" align="center" className={classes.private}>* Mats, towels, water, and retail available to purchase or rent in studio</Typography>
                       
-                      <Typography variant="body1" align="center" className={classes.private} color="primary" >* all yoga classes are subject to TN sales tax</Typography>
+                      <Typography variant="body1" align="center" className={classes.private} color="primary" >* All yoga classes are subject to TN sales tax</Typography>
 ​​
 
 

@@ -84,9 +84,9 @@ const InfoCards = ({  }) => {
             <Grid container item xs={12} justify="space-around" spacing={2}>
               {infoCards.map((infoCard) => (
                 <Grid key={infoCard.id} xs={12} sm={4}  item className={classes.infoContainer}>
-                    <div className={classes.icon}>
+                    {/* <div className={classes.icon}>
                       
-                    </div>
+                    </div> */}
                   <Paper className={classes.paper} spacing={2} elevation={3}>
                    
                     <Typography align="center" variant="h5" className={classes.infoContent}>{infoCard.content}</Typography>

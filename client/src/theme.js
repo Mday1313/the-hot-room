@@ -81,7 +81,7 @@ let theme = createMuiTheme({
         fontFamily: '"The Girl Next Door", cursive',
       },
       h6: {
-        color: '#4a4a4a',
+        // color: '#4a4a4a',
         fontWeight: '300'
       },
 

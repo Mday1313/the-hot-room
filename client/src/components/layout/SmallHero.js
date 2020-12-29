@@ -7,8 +7,7 @@ const useStyles = makeStyles((theme) => ({
         width: '100vw',
         backgroundSize: 'cover',
         margin: '0 auto',
-        minHeight: '300px',
-        marginBottom: theme.spacing(6),
+        minHeight: '200px',
         boxShadow: ' 0 5px 5px #ccc'  
     },
     header: {
@@ -31,11 +30,12 @@ const useStyles = makeStyles((theme) => ({
     return (
         <>
         
-        <div className={classes.root} style={{backgroundImage: `linear-gradient(rgba(0,0,0, .5),rgba(0,0,0, .5)), url(${props.img})`,  backgroundPosition: `center ${props.position ?? 'center'}`,}}>
+        <div className={classes.root} style={{backgroundImage: `linear-gradient(rgba(0,0,0, .5),rgba(0,0,0, .5)), url(${props.img})`,  backgroundPosition: `center ${props.position ?? 'center'}`}}>
         
            
         </div>
-        <Typography variant="h1" className={classes.header}>{props.title}</Typography>
+        
+        <Typography variant="h1" style={props.title ? {display: 'flex'} : {display: 'none'}} className={classes.header}>{props.title}</Typography>
         </>
     )
   }

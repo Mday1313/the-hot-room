@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import CallIcon from '@material-ui/icons/Call';
 import AppBar from "@material-ui/core/AppBar";
 import ToolBar from "@material-ui/core/Toolbar";
-
+import Modal from '../common/ScheduleModal';
 import Menu from '@material-ui/core/Menu';
 import MenuIcon from "@material-ui/icons/Menu";
 import IconButton from "@material-ui/core/IconButton";
@@ -20,7 +20,8 @@ class Header extends Component {
   
     state= {
         drawerOpen: false,
-        headerShow: false
+        headerShow: false,
+        contactShow: true
     }
 
     componentDidMount() {
@@ -31,11 +32,13 @@ class Header extends Component {
     handleScroll =()=> {
         if(window.scrollY>10){
             this.setState({
-                headerShow: true
+                headerShow: true,
+                contactShow: false
             })
         } else {
             this.setState({
-                headerShow: false
+                headerShow: false,
+                contactShow: true
             })
         }
     }
@@ -65,7 +68,12 @@ class Header extends Component {
                  width: '100vw'
 
             }} >
-                <Typography variant="body1" spacing={3} color="secondary" >
+                <Typography 
+                    style={{
+                        display: this.state.contactShow ? '' : 'none'
+                    }}
+                    variant="body1" spacing={3} color="secondary" 
+                >
                     <CallIcon />
                     Call us: 615-457-3075
                 </Typography>
@@ -97,11 +105,12 @@ class Header extends Component {
                         <Typography style={{marginLeft: "20px", textDecoration: "none"}} color="inherit" variant="h6" component={Link} to="/classes" align="center" >Classes</Typography>
                         <Typography style={{marginLeft: "20px", textDecoration: "none"}} color="inherit" variant="h6" component={Link} to="/events" align="center" >Events</Typography>
                         <Typography style={{marginLeft: "20px", textDecoration: "none"}} color="inherit" variant="h6" component={Link} to="/pricing" align="center" >Prices</Typography>
-                        <Button style={{marginLeft: "20px"}}variant="contained" color="secondary">Book Now</Button>
+                        <Modal title="Schedule"/>
+                        <Button href="https://clients.mindbodyonline.com/classic/ws?studioid=5398&stype=-98" style={{marginLeft: "20px"}}variant="contained" color="secondary">Book Now</Button>
                     </div>
                 </div>
                 <div style={{
-                    //  width: '300px',
+                     display: this.state.contactShow ? '' : 'none',
                      textAlign: 'right',
                      color: '#fff'
                 }}>

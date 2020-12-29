@@ -81,9 +81,9 @@ const Team = () => {
     return (
         <div className={classes.root}>
             <SmallHero img={headImg} alt="Team Hero" title="Meet the Team"/>
-            <Grid container item xs={12} className={classes.team}>
+            {/* <Grid container item xs={12} className={classes.team}>
                 <img src={img} alt="team photo" width="700px"/>
-            </Grid>
+            </Grid> */}
             <Grid container item  xs={12} className={classes.individuals}>
                 {instructors.map((instructor) => (
                     <Grid item xs={12} sm={6} md={4} lg={3} key={instructor.id} align="center" className={classes.individual}>
