@@ -7,6 +7,7 @@ import Box from '@material-ui/core/Box';
 import ProfileForm from '../admin/ProfileForm';
 import MemberList from '../admin/MemberList';
 import VideoList from '../admin/VideoList';
+import AdminPanel from './AdminPanel';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -99,7 +100,7 @@ export default function VerticalTabs() {
         <VideoList />
       </TabPanel>
       <TabPanel className={classes.tabPanel} value={value} index={3}>
-        Admin Panel (auth only)
+        <AdminPanel />
       </TabPanel>
       
     </div>

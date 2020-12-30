@@ -32,6 +32,7 @@ let theme = createMuiTheme({
         main: '#f26346',
         light: '#fedcd2',
         contrastText: '#fff',
+        textSecondary: '#fff',
         overlay: 'rgba(254, 220, 210, .5)'
     },
     success: {

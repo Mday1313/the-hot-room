@@ -28,7 +28,8 @@ const events = [
     date: 'Month, 11, year',
     time: 'time',
     url: '',
-    image: 'https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTY0OTE4ODAzMDQwMzE0Njg1/yoga-gettyimages-1142820079-promo.jpg'
+    image: 'https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTY0OTE4ODAzMDQwMzE0Njg1/yoga-gettyimages-1142820079-promo.jpg',
+    description: ' Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et debitis architecto, accusantium aut minus quod unde amet animi dolorem, provident praesentium modi. Reiciendis ea veritatis sequi blanditiis natus itaque cupiditate?'
 },
 {
     id: 3,

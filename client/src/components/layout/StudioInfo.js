@@ -4,6 +4,8 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import Link from '@material-ui/core/Link';
+import img from '../../resources/images/HR-97.jpg'
+import { url } from 'gravatar';
 
 
  
@@ -40,8 +42,11 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'space-around',
     },
     video: {
-      backgroundColor: theme.palette.grey['200'],
+      backgroundImage: `url(${img})`,
+      backgroundPosition: 'center center',
+      backgroundSize: 'cover',
       height: '400px',
+      width: '400px',
       marginTop: theme.spacing(3)
     },
     viewAll: {
@@ -71,10 +76,10 @@ const StudioInfo = () => {
               </Grid>
               <Grid container item xs={12} md={5} justify="space-around"  className={classes.contentBox}>
                 <Grid item xs={12} className={classes.title}>
-                  <Typography align="center" color="secondary" variant="h5">take a look around...</Typography>
-                  <div item xs={12} className={classes.video} align="center">
-                 video walk-thru goes here
-                  </div>
+                  {/* <Typography align="center" color="secondary" variant="h5">take a look around...</Typography> */}
+                  
+                  <div className={classes.video}></div>
+                 
                 </Grid>
               </Grid>
               <Grid container item xs={12} md={7} justify="space-around"  className={classes.contentBox}>
@@ -82,16 +87,16 @@ const StudioInfo = () => {
                   <Typography align="center" color="secondary" variant="h5">we want you to feel right at home</Typography>
                 </Grid> */}
                 <Grid item xs={12} className={classes.body}>
-                  <Typography align="left" variant="body1">experience why folks say we have the most amazing community at the hot room! enjoy a delicious draft booch kombucha after class and connect with your fellow yogis in a relaxed and welcoming environment.</Typography>
+                  <Typography align="left" variant="body1">Experience why folks say we have the most amazing community at the hot room! Enjoy a delicious draft booch kombucha after class and connect with your fellow yogis in a relaxed and welcoming environment.</Typography>
                 </Grid>
                 <Grid item xs={12} className={classes.body}>
-                  <Typography align="left" variant="body1">the spacious yoga room includes state-of-the-art Flotex flooring; a soft, waterproof and slip-proof surface that is anti-bacterial and anti-microbial. high quality, hospital-grade Green Air purifiers capture airborne impurities to combat odor, bacteria, and viruses delivering fresh, clean, oxygen-rich air to the studio.</Typography>
+                  <Typography align="left" variant="body1">The spacious yoga room includes state-of-the-art Flotex flooring; a soft, waterproof and slip-proof surface that is anti-bacterial and anti-microbial. high quality, hospital-grade Green Air purifiers capture airborne impurities to combat odor, bacteria, and viruses delivering fresh, clean, oxygen-rich air to the studio.</Typography>
                 </Grid>
                 <Grid item xs={12} className={classes.body}>
-                  <Typography align="left" variant="body1">the hot room is a proud member of the Original Hot Yoga Association (OH YA!), an organization dedicated to preserving and promoting the therapeutic benefits of the Original Hot Yoga by creating and upholding standards and resources for studios, teachers, classes and teacher trainings.</Typography>
+                  <Typography align="left" variant="body1">The hot room is a proud member of the Original Hot Yoga Association (OH YA!), an organization dedicated to preserving and promoting the therapeutic benefits of the Original Hot Yoga by creating and upholding standards and resources for studios, teachers, classes and teacher trainings.</Typography>
                 </Grid>
                 <Grid item xs={12} className={classes.body}>
-                  <Typography align="left" variant="body1">thank you for supporting a women-owned local business that has been serving the community since 2015. the hot room pays no other franchise or affiliation fees to any other entity, and 100% of your investment supports our studio.
+                  <Typography align="left" variant="body1">Thank you for supporting a women-owned local business that has been serving the community since 2015. The hot room pays no other franchise or affiliation fees to any other entity, and 100% of your investment supports our studio.
                   </Typography>
                 </Grid>
                 <Grid item xs={12} className={classes.btn}>

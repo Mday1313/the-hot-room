@@ -43,12 +43,12 @@ const items = [
 const FullClasses = ({...props}) => {
 
     return (
-        <>
-            <SmallHero title="Classes Offered" img={img}/>
-            <div className="container">
+        <div style={{    background: 'linear-gradient(to bottom right, #7498be, #b8cddd, #fedcd2)'}}>
+            <SmallHero title="Classes Offered" altText="true" img={img}/>
+            <div  >
                 <Grid item xs={12} align="center">
                     <Typography variant="h4" component="h2" color="textPrimary">some hot, some not...</Typography>
-                    <Typography variant="h6" component="h3" color="inherit">classes designed to help you feel your absolute best!</Typography>
+                    <Typography gutterBottom variant="h6" component="h3" color="inherit">classes designed to help you feel your absolute best!</Typography>
                 </Grid>
                 <Grid container item xs={12} align="center" className="">
                 {items.map((value) => (
@@ -59,7 +59,7 @@ const FullClasses = ({...props}) => {
               </Grid>
                
             </div>
-        </>
+        </div>
        
     )
 }

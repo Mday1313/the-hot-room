@@ -8,6 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Avatar from '@material-ui/core/Avatar';
+import EventModal from './EventModal';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -73,7 +74,7 @@ const FullEvent = (props) => {
                     className={classes.media}
                     image={props.event.image}
                     title={props.event.title}
-                    />
+                />
                
                 <CardContent className={classes.layer}>
                     <div className={classes.topText}>
@@ -98,9 +99,7 @@ const FullEvent = (props) => {
                     {/* <Button size="small" color="primary">
                     Share
                     </Button> */}
-                    <Button size="small" color="primary">
-                    Learn More
-                    </Button>
+                   <EventModal event={props.event}/>
                 </CardActions>
             </Card>
         </div>

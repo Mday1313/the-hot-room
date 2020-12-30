@@ -41,24 +41,30 @@ const EventModal = ({...props}) => {
                 onClose={handleClose}
                 aria-labelledby="dialog"
             >
-                <DialogTitle id="dialog">
-                    <Typography style={{padding: theme.spacing(3)}} align="center" variant="h3" >{event.name}</Typography>
+                <DialogTitle id="dialog" style={{padding: theme.spacing(3)}} >
+                    <Typography color="primary" align="center" variant="h3" >{event.name}</Typography>
+                    <Typography align="center" variant="h5" >with {event.instructor}</Typography>
                 </DialogTitle>
-                <DialogContent align="center">
+                <DialogContent align="left">
                   <Grid container >
-                      <Grid container item  >
+                  <Grid container item xs>
                           <Grid item xs={12} md={6}>
-                              <img src={event.image} alt={event.name} width='80%'/>
+                              <img src={event.image} alt={event.name} width='90%'/>
                           </Grid>
-                          <Grid item xs={12} md={6}>
-                            <Typography variant="body1" >Location: {event.location}</Typography>
-                          </Grid>
-                      </Grid>
-                      <Grid container item >
-                          <Grid item xs={12} >
-                          <Typography variant="body1" >{event.description}</Typography>
-                          </Grid>
-                      </Grid>
+                          <Grid item xs={12} md={6} style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly'}}>
+                              <Grid item container style={{display: 'flex', flexDirection: 'column'}} >
+                              <Typography gutterBottom variant="h6" >{event.date} </Typography>
+                                <Typography gutterBottom variant="h6" >{event.time}</Typography>
+                                <Typography gutterBottom variant="h6" >{event.location}</Typography>
+                              </Grid>
+                                
+                                <Typography gutterBottom variant="body1" >{event.description}</Typography>
+                                <Button style={{width: "150px", display: "flex", margin: `16px auto`}}variant="contained"  color="primary" href="/">
+                                    RSVP
+                                </Button>
+                            </Grid>
+                        </Grid>
+                    
                   </Grid>
                 </DialogContent>
                 <DialogActions>

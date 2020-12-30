@@ -8,14 +8,14 @@ const useStyles = makeStyles((theme) => ({
         backgroundSize: 'cover',
         margin: '0 auto',
         minHeight: '200px',
-        boxShadow: ' 0 5px 5px #ccc'  
+        boxShadow: ' 0 1px 1px #4a4a4a'  
     },
     header: {
         display: 'flex',
         justifyContent: 'center',
         alignContent: 'flex-end',
         padding: theme.spacing(6),
-        color: theme.palette.primary.main,
+        
         fontWeight: '500'
     },
     img: {
@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
            
         </div>
         
-        <Typography variant="h1" style={props.title ? {display: 'flex'} : {display: 'none'}} className={classes.header}>{props.title}</Typography>
+        <Typography variant="h1" color={props.altText ? 'textSecondary' : 'primary'} style={props.title ? {display: 'flex'} : {display: 'none'}} className={classes.header}>{props.title}</Typography>
         </>
     )
   }

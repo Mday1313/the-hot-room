@@ -6,7 +6,10 @@ import team1 from '../../resources/images/WS-2.jpg';
 import team2 from '../../resources/images/HR-109.jpg';
 import team3 from '../../resources/images/HR-8.jpg';
 import team4 from '../../resources/images/HR-9.jpg';
-import Grid from '@material-ui/core/Grid';
+import {
+    Grid, 
+    Typography
+} from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
 const instructors = [
@@ -33,25 +36,7 @@ const instructors = [
         name: 'Roland Landers',
         bio: 'Brief Description',
         image: team4
-    },
-    {
-        id: 5,
-        name: 'Sky Loguidice',
-        bio: 'Brief Description',
-        image: 'https://theknow.denverpost.com/wp-content/uploads/2020/04/GettyImages-1152829238.jpg'
-    },
-    {
-        id: 6,
-        name: 'Robbie Short',
-        bio: 'Brief Description',
-        image: 'https://theknow.denverpost.com/wp-content/uploads/2020/04/GettyImages-1152829238.jpg'
-    },
-    {
-        id: 7,
-        name: 'Anna Heath',
-        bio: 'Brief Description',
-        image: 'https://theknow.denverpost.com/wp-content/uploads/2020/04/GettyImages-1152829238.jpg'
-    },
+    }
 ]
 
 const useStyles = makeStyles((theme) => ({
@@ -72,7 +57,25 @@ const useStyles = makeStyles((theme) => ({
     individual: {
         padding: theme.spacing(4),
         
-    }
+    },
+    media: {
+        // height: ,
+        marginTop: '56.25%' // 16:9
+     },
+     card: {
+        position: 'relative',
+        background: theme.palette.secondary.light,
+        paddingTop: theme.spacing(1)
+     },
+     overlay: {
+        position: 'absolute',
+        bottom: '0px',
+
+        width: '100%',
+        color: 'black',
+        backgroundColor: theme.palette.secondary.light,
+        padding: theme.spacing(3)
+     }
 }))
 
 const Team = () => {
@@ -87,8 +90,15 @@ const Team = () => {
             <Grid container item  xs={12} className={classes.individuals}>
                 {instructors.map((instructor) => (
                     <Grid item xs={12} sm={6} md={4} lg={3} key={instructor.id} align="center" className={classes.individual}>
-                        <img src={instructor.image} alt={instructor.name} height="400px"/>
-                <div className="team-overlay">{instructor.name}</div>
+                        <div className={classes.card}>
+                             <img classeName={classes.media} src={instructor.image} alt={instructor.name} height="400px"/>
+                            <div className={classes.overlay}>
+                                <Typography variant="h6"> {instructor.name}</Typography>
+                           
+                            </div>
+                        </div>
+                       
+              
                     </Grid>
                     
                 ))}

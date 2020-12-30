@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
+import {Typography, Grid} from '@material-ui/core';
 import logo from '../../resources/images/logo_flame.png'
 
 const useStyles = makeStyles((theme) => ({
@@ -10,22 +10,20 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'center',
         alignContent: 'center',
-        padding: theme.spacing(2),
+        padding: theme.spacing(3),
         marginBottom: theme.spacing(4),
         marginTop: theme.spacing(3),
         color: theme.palette.common.grey,
-        background: 'linear-gradient(#7498be, #b8cddd, #fedcd2)',
-        border: `2px solid ${theme.palette.primary.main}`,
-        borderRadius: '10px',
-        boxShadow: ' 0 15px 10px #999'
+        background: '#fff',
+        boxShadow: ' 0px 2px 3px #999'
     },
     imageContainer: {
       display: 'flex',
       justifyContent: 'center',
       alignContent: 'center',
       flexDirection: 'column',
-      padding: theme.spacing(2),
-      margin: 'auto'
+      margin: 'auto',
+   
     },
     classTitle: {
         paddingTop: theme.spacing(2),
@@ -40,14 +38,19 @@ const ClassDescription = ({...props}) => {
     const classes = useStyles();
 
     return (
-        <div className={classes.root}>   
-            <div className={classes.imageContainer}>
-                <img src={logo} className={classes.logo} alt="the hot room"  width="50px"/>
+        <Grid container xs={12} md={8} className={classes.root}>   
+           
+            <Grid item xs={12}>
+                <div className={classes.imageContainer}>
+                    <img src={logo} className={classes.logo} alt="the hot room"  width="30px"/>
+                </div>
                 <Typography variant="h5" className={classes.classTitle} align="center">{props.item.name}</Typography>
                 
                 <Typography variant="body1" className={classes.classDescription} align="center">{props.item.desc}</Typography>
-            </div>
-        </div>
+            </Grid>
+               
+            
+        </Grid>
     )
 }
 
