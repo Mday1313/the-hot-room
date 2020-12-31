@@ -22,7 +22,7 @@ const App = () =>
   <Provider store={store}>
     <Router>
       <Fragment>
-        <Header />
+       
         <Route exact path="/" component={ Home } />
         <section className="mainContainer">
           <Alert />

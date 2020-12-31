@@ -3,6 +3,7 @@ import SmallHero from '../../components/layout/SmallHero';
 import img from '../../resources/images/teamHero.jpg';
 import FullEvent from '../../components/common/FullEvent';
 import Grid from '@material-ui/core/Grid';
+import Header from '../../components/layout/Header';
 
 
 const events = [
@@ -72,6 +73,7 @@ const Events = () => {
     
     return (
         <div>
+            <Header />
             {/* if no events, display no events at this time, new events coming soon */}
             <SmallHero img={img} alt="Events Hero" title="Upcoming Events"/>
 

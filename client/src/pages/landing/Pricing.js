@@ -5,7 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import img from '../../resources/images/yogaPortrait.jpg';
-
+import Header from '../../components/layout/Header';
 import headImg from '../../resources/images/HR-23.jpg';
 import { url } from 'gravatar';
 import Etiquette from '../../components/layout/Etiquette';
@@ -61,6 +61,8 @@ const Pricing = () => {
     const classes = useStyles();
     
     return (
+        <>
+        <Header />
         <div className={classes.root}>
             <SmallHero  alt="yoga image" img={headImg} position="75%"/>
             <Grid container className={classes.section} >
@@ -148,6 +150,7 @@ const Pricing = () => {
             
            
         </div>
+    </>
     )
 }
 

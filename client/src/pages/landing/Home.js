@@ -7,19 +7,20 @@ import BellyBanner from '../../components/layout/BellyBanner';
 import Events from '../../components/layout/Events';
 import Partners from '../../components/layout/Partners';
 import StudioInfo from '../../components/layout/StudioInfo';
+import Header from '../../components/layout/Header';
 
 const Home = () => {
     return (
         <div>
-           <Hero />
-           <CallToAction />
-           <StudioInfo />
-           <BellyBanner />
-         
-           <InfoCards />
+            <Header />
+            <Hero />
+            <CallToAction />
+            <StudioInfo />
+            <BellyBanner />
+            <InfoCards />
             <Reviews />
-           <Events />
-           <Partners />
+            <Events />
+            <Partners />
         </div>
     )
 }

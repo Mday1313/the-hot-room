@@ -4,6 +4,7 @@ import ClassDescription from '../../components/layout/ClassDescription';
 import img from '../../resources/images/teamHero.jpg';
 import SmallHero from '../../components/layout/SmallHero';
 import { Typography } from '@material-ui/core';
+import Header from '../../components/layout/Header';
 
 // ToDo: replace with database call
 const items = [
@@ -43,6 +44,8 @@ const items = [
 const FullClasses = ({...props}) => {
 
     return (
+        <>
+         <Header />
         <div style={{    background: 'linear-gradient(to bottom right, #7498be, #b8cddd, #fedcd2)'}}>
             <SmallHero title="Classes Offered" altText="true" img={img}/>
             <div  >
@@ -60,7 +63,7 @@ const FullClasses = ({...props}) => {
                
             </div>
         </div>
-       
+       </>
     )
 }
 

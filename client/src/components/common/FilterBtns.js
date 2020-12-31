@@ -26,13 +26,15 @@ const FilterBtns = (props) => {
     const filters = props.filters;
 
     return (
-        <ul className="course-nav">
-            {filters.map((filter) => (
-                <li key={filter.id}><NavLink to={`/${filter.url}`}>{filter.title}</NavLink></li>
-            ))}
-        
-        </ul>
-      
+        <>
+            <ul className="course-nav">
+                {filters.map((filter) => (
+                    <li key={filter.id}><NavLink to={`/${filter.url}`}>{filter.title}</NavLink></li>
+
+                ))}
+            
+            </ul>
+        </>
     )
 }
 

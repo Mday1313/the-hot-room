@@ -1,5 +1,6 @@
 import React from 'react';
 import SmallHero from '../../components/layout/SmallHero';
+import Header from '../../components/layout/Header';
 import headImg from '../../resources/images/teamHero.jpg';
 import img from '../../resources/images/HR_16.jpg';
 import team1 from '../../resources/images/WS-2.jpg';
@@ -82,6 +83,8 @@ const Team = () => {
     const classes = useStyles();
     
     return (
+        <>
+        <Header />
         <div className={classes.root}>
             <SmallHero img={headImg} alt="Team Hero" title="Meet the Team"/>
             {/* <Grid container item xs={12} className={classes.team}>
@@ -105,6 +108,7 @@ const Team = () => {
             </Grid>
            
         </div>
+    </>
     )
 }
 
