@@ -46,8 +46,6 @@ const DashHeader = () => {
                     <PhotoCameraIcon />
                 </IconButton>
             </div>
-            
-          
         </Paper>
        
     )

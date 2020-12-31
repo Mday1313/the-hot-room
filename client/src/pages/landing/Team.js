@@ -37,7 +37,26 @@ const instructors = [
         name: 'Roland Landers',
         bio: 'Brief Description',
         image: team4
-    }
+    },
+    {
+        id: 5,
+        name: 'Kyle Casserly',
+        bio: 'Brief Description',
+        image: team1
+    },
+    {
+        id: 6,
+        name: 'Jessyca Livingston',
+        bio: 'Brief Description',
+        image: team2
+    },
+    {
+        id: 7,
+        name: 'Jessyca Livingston',
+        bio: 'Brief Description',
+        image: team2
+    },
+  
 ]
 
 const useStyles = makeStyles((theme) => ({
@@ -97,13 +116,10 @@ const Team = () => {
                              <img classeName={classes.media} src={instructor.image} alt={instructor.name} height="400px"/>
                             <div className={classes.overlay}>
                                 <Typography variant="h6"> {instructor.name}</Typography>
-                           
+                                <Typography variant="body2"> {instructor.bio}</Typography>
                             </div>
                         </div>
-                       
-              
                     </Grid>
-                    
                 ))}
             </Grid>
            
